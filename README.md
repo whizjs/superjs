@@ -1,5 +1,10 @@
 # video
 
+## 谢谢关注
+```
+欢迎提交 `issue` 和 `pull request`
+```
+
 ## Project setup
 ```
 yarn install

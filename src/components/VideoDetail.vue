@@ -2,7 +2,7 @@
   <div v-if="videos" class="mt-4">
     <div v-for="(video, index) in videos" :key="index">
     <div class="card flex-md-row mb-4 shadow-sm h-md-250" :id="video.id.videoId">
-      <img @click="watchVideo(video.id.videoId)" class="card-img-right flex-auto d-lg-block" :src="srcUrl(video)" :alt="altText(video)">
+      <img @click="watchVideo(video.id.videoId)" class="card-img-right flex-auto d-lg-block" :src="srcUrl(video)" :alt="videoInfo(video)" :title="videoInfo(video)">
       <div class="card-body d-flex flex-column align-items-start">
         <strong class="d-inline-block mb-2 text-success"><a @click="goToChannel(video.snippet.channelId)">Channel: {{video.snippet.channelTitle}} </a></strong>
         <h4 class="mb-1">
@@ -38,8 +38,8 @@ export default {
     srcUrl: function(v) {
       return v.snippet.thumbnails.high.url;
     },
-    altText: function(video) {
-      return video.snippet.title;
+    videoInfo: function(video) {
+      return video.snippet.title + "\n" + video.snippet.description;
     }
   }
 };

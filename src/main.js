@@ -6,6 +6,7 @@ import store from './store';
 // import firebase from 'firebase';
 
 // Vue.use(VueFire);
+Vue.use(require('vue-moment'));
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 

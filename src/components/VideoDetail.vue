@@ -8,7 +8,7 @@
         <h4 class="mb-1">
           <a class="text-dark" @click="watchVideo(video.id.videoId)">{{ video.snippet.title }}</a>
         </h4>
-        <p class="card-text text-muted mb-1">{{ video.snippet.publishedAt }}</p>
+        <p class="card-text text-muted mb-1">{{ video.snippet.publishedAt | moment("YYYY-MM-DD h:mm:ss") }}</p>
         <p class="card-text mb-auto">{{ video.snippet.description }}</p>
       </div>
       

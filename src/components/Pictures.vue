@@ -1,7 +1,7 @@
 <template>
 
   <div class="input-group input-group-lg">
-		<input type="text" class="form-control" ref="searchPicturesKeyword"/>
+		<input type="text" class="form-control" ref="searchPicturesKeyword" @keyup.enter="getPictures"/>
 		<div class="input-group-append">
 			<span class="btn btn-primary" @click="getPictures">Search</span>
 		</div>

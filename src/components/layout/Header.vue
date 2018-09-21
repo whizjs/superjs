@@ -1,25 +1,37 @@
 <template>
-  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom">
-    <router-link class="my-0 mr-md-auto font-weight-normal superjs-header-menu" to="/">superjs</router-link>
-    <nav class="my-2 my-md-0 mr-md-3">
-      <router-link class="p-2 text-dark superjs-header-menu" to="/">Home</router-link>
-      <router-link class="p-2 text-dark superjs-header-menu" to="/videos">Videos</router-link>
-      <router-link class="p-2 text-dark superjs-header-menu" to="/pictures">Pictures</router-link>
-      <router-link class="p-2 text-dark superjs-header-menu" to="/vip">VIP</router-link>
-    </nav>
-    <router-link class="btn btn-outline-primary" to="/auth/login">Login</router-link>
+<div>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-1 bg-white border-bottom">
+    <router-link class="my-0 mr-md-auto font-weight-normal" to="/">superjs</router-link>
+    <User></User>
   </div>
+  <div class="mb-2">
+        <nav class="nav d-flex justify-content-between">
+          <router-link class="p-2 text-dark" to="/">Home</router-link>
+          <router-link class="p-2 text-dark" to="/videos">Videos</router-link>
+          <router-link class="p-2 text-dark" to="/pictures">Pictures</router-link>
+          <router-link class="p-2 text-dark" to="/novels">Novels</router-link>
+          <router-link class="p-2 text-dark" to="/bbs">BBS</router-link>
+          <router-link class="p-2 text-dark" to="/blog">Blog</router-link>
+          <router-link class="p-2 text-dark" to="/courses">Courses</router-link>
+          <router-link class="p-2 text-dark" to="/leetcode">LeetCode</router-link>
+          <router-link class="p-2 text-dark" to="/tools">Tools</router-link>
+          <router-link class="p-2 text-danger" to="/vip">VIP</router-link>
+        </nav>
+      </div>
+
+      </div>
 </template>
 
 <script>
+import User from "../user/User";
 export default {
-  name: "Header"
+  name: "Header",
+  components: {
+    User
+  }
 };
 </script>
 
 
-<style scoped>
-.superjs-header-menu:hover {
-  text-decoration: none;
-}
+<style>
 </style>

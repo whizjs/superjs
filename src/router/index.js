@@ -4,8 +4,14 @@ import Router from 'vue-router';
 import Home from '@/components/Home';
 import Videos from '@/components/Videos';
 import Pictures from '@/components/Pictures';
+
+
+import Tools from '@/components/tools/Tools';
+
 import Vip from '@/components/Vip';
-import Login from '@/components/auth/Login';
+
+
+import Login from '@/components/user/Login';
 
 Vue.use(Router);
 
@@ -28,12 +34,17 @@ const router = new Router({
             component: Pictures
         },
         {
+            path: '/tools',
+            name: 'Tools',
+            component: Tools
+        },
+        {
             path: '/vip',
             name: 'Vip',
             component: Vip
         },
         {
-            path: '/auth/login',
+            path: '/user/login',
             name: 'Login',
             component: Login
         }

@@ -11,9 +11,11 @@
           <router-link class="p-2 text-dark" to="/pictures">Pictures</router-link>
           <router-link class="p-2 text-dark" to="/novels">Novels</router-link>
           <router-link class="p-2 text-dark" to="/bbs">BBS</router-link>
-          <router-link class="p-2 text-dark" to="/blog">Blog</router-link>
+          <router-link class="p-2 text-dark" to="/news">News</router-link>
           <router-link class="p-2 text-dark" to="/courses">Courses</router-link>
           <router-link class="p-2 text-dark" to="/leetcode">LeetCode</router-link>
+          <router-link class="p-2 text-danger" to="/jobs">Jobs</router-link>
+          <router-link class="p-2 text-dark" to="/coin">Coin</router-link>
           <router-link class="p-2 text-dark" to="/tools">Tools</router-link>
           <router-link class="p-2 text-danger" to="/vip">VIP</router-link>
         </nav>

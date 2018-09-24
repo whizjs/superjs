@@ -11,9 +11,10 @@
     "axios": "^0.18.0",
     "bootstrap": "4.1.3",
     "css-loader": "^1.0.0",
+    "date-fns": "^1.29.0",
     "firebase": "^5.4.2",
+    "validator": "^10.7.1",
     "vue": "^2.5.17",
-    "vue-moment": "^4.0.0",
     "vue-router": "^3.0.1",
     "vuefire": "^1.4.5",
     "vuex": "^3.0.1"

@@ -5,8 +5,8 @@
   </div>
 
   <div v-else>
-    <router-link class="btn btn-outline-primary" to="/user/signup">Sign Up</router-link>
-    <router-link class="btn btn-outline-primary ml-2" to="/user/login">Login</router-link>
+    <router-link class="btn btn-outline-primary btn-sm user-btn" to="/user/signup">Sign Up</router-link>
+    <router-link class="btn btn-outline-primary btn-sm ml-2 user-btn" to="/user/login">Login</router-link>
   </div>
 </div>
 </template>
@@ -23,6 +23,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.user-btn {
+  min-width: 96px;
+}
 </style>
 

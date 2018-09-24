@@ -1,8 +1,8 @@
-# video
+# superjs
 
-## 谢谢关注
+## Welcome
 ```
-欢迎提交 `issue` 和 `pull request`
+issues and pull requests are welcome
 ```
 
 ## Project setup

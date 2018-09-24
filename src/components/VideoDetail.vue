@@ -8,7 +8,7 @@
         <h4 class="mb-1">
           <a class="text-dark" @click="watchVideo(video.id.videoId)">{{ video.snippet.title }}</a>
         </h4>
-        <p class="card-text text-muted mb-1">{{ video.snippet.publishedAt | moment("YYYY-MM-DD h:mm:ss") }}</p>
+        <p class="card-text text-muted mb-1">{{ formattedTime(video.snippet.publishedAt) }}</p>
         <p class="card-text mb-auto">{{ video.snippet.description }}</p>
       </div>
       
@@ -19,6 +19,7 @@
 
 <script>
 import { mapGetters } from "vuex";
+import { format } from "date-fns";
 export default {
   name: "VideoDetail",
   computed: {
@@ -40,6 +41,9 @@ export default {
     },
     videoInfo: function(video) {
       return video.snippet.title + "\n" + video.snippet.description;
+    },
+    formattedTime: function(t) {
+      return format(t, "YYYY-MM-DD HH:mm:ss");
     }
   }
 };

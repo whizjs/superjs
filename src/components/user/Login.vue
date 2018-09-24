@@ -3,23 +3,31 @@
     <form class="form-signin">
       <img class="mb-4" src="../../assets/logo.png" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">Welcome Back!</h1>
+
+      <input type="text" class="form-control login-login" placeholder="Username or Email" required autofocus>
+
+      <input type="password" class="form-control login-password" placeholder="Password" required>
       
-      <label for="inputEmail" class="sr-only">Username or Email</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-      
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-      
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      
+      <button @click.stop.prevent="login" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    
       <p class="mt-5 mb-3 text-muted">&copy; superjs.org</p>
     </form>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+import isEmail from "validator/lib/isEmail";
+
 export default {
-  name: "Login"
+  name: "Login",
+  methods: {
+    getLoginToken(login, pw) {
+      //判断login是否是email
+
+      console.log("login");
+    }
+  }
 };
 </script>
 
@@ -43,12 +51,12 @@ export default {
 .form-signin .form-control:focus {
   z-index: 2;
 }
-.form-signin input[type="email"] {
+.login-login {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.form-signin input[type="password"] {
+.login-password {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;

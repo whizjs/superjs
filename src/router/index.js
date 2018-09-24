@@ -4,7 +4,7 @@ import Router from 'vue-router';
 import Home from '@/components/Home';
 import Videos from '@/components/Videos';
 import Pictures from '@/components/Pictures';
-
+import Jobs from '@/components/jobs/Jobs';
 
 import Tools from '@/components/tools/Tools';
 
@@ -32,6 +32,11 @@ const router = new Router({
             path: '/pictures',
             name: 'Pictures',
             component: Pictures
+        },
+        {
+            path: '/jobs',
+            name: 'Jobs',
+            component: Jobs
         },
         {
             path: '/tools',

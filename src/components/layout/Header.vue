@@ -16,7 +16,7 @@
           <router-link class="p-2 text-dark" to="/leetcode">LeetCode</router-link>
           <router-link class="p-2 text-danger" to="/jobs">Jobs</router-link>
           <router-link class="p-2 text-dark" to="/coin">Coin</router-link>
-          <router-link class="p-2 text-dark" to="/tools">Tools</router-link>
+          <Tools></Tools>
           <router-link class="p-2 text-danger" to="/vip">VIP</router-link>
         </nav>
       </div>
@@ -25,13 +25,15 @@
 </template>
 
 <script>
-import User from "../user/User";
-export default {
-  name: "Header",
-  components: {
-    User
-  }
-};
+  import User from "../user/User";
+  import Tools from "../tools/Tools";
+  export default {
+    name: "Header",
+    components: {
+      User,
+      Tools
+    }
+  };
 </script>
 
 

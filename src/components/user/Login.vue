@@ -4,9 +4,9 @@
       <img class="mb-4" src="../../assets/logo.png" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">Welcome Back!</h1>
 
-      <input type="text" class="form-control login-login" placeholder="Username or Email" ref="login" required autofocus />
+      <input type="text" class="form-control login-login" placeholder="Username or Email" v-model.trim="login_text" required autofocus />
 
-      <input type="password" class="form-control login-password" placeholder="Password" ref="pw" required />
+      <input type="password" class="form-control login-password" placeholder="Password" v-model.trim="pw_text" required />
       
       <button @click.stop.prevent="getLoginToken"  class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     
@@ -22,14 +22,20 @@
 
   export default {
     name: "Login",
+    data: function() {
+      return {
+        login_text: "",
+        pw_text: ""
+      };
+    },
     methods: {
       getLoginToken() {
-        let login = this.$refs.login.value;
-        let pw = this.$refs.pw.value;
-        if (isEmail(login)) {
+        let loginText = this.login_text;
+        let pwText = this.pw_text;
+        if (isEmail(loginText)) {
         }
 
-        console.log(login, pw);
+        console.log(loginText, pwText);
       }
     }
   };

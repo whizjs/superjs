@@ -1,7 +1,7 @@
 <template>
 
   <div class="input-group input-group-lg">
-		<input type="text" class="form-control" ref="searchPicturesKeyword" @keyup.enter="getPictures"/>
+		<input type="text" class="form-control" v-model.trim="searchPicturesKeyword" @keyup.enter="getPictures"/>
 		<div class="input-group-append">
 			<span class="btn btn-primary" @click="getPictures">Search</span>
 		</div>
@@ -10,14 +10,19 @@
 </template>
 
 <script>
-export default {
-  name: "Pictures",
-  methods: {
-    getPictures: function() {
-      console.log(this.$refs.searchPicturesKeyword.value);
+  export default {
+    name: "Pictures",
+    data: function() {
+      return {
+        searchPicturesKeyword: ""
+      };
+    },
+    methods: {
+      getPictures: function() {
+        console.log(this.searchPicturesKeyword);
+      }
     }
-  }
-};
+  };
 </script>
 
 

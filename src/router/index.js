@@ -12,6 +12,7 @@ import Vip from '@/components/Vip';
 
 
 import Login from '@/components/user/Login';
+import Signup from '@/components/user/Signup';
 
 Vue.use(Router);
 
@@ -52,6 +53,11 @@ const router = new Router({
             path: '/user/login',
             name: 'Login',
             component: Login
+        },
+        {
+            path: '/user/signup',
+            name: 'Signup',
+            component: Signup
         }
     ]
 });

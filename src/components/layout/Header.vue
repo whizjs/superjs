@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-1 bg-white border-bottom">
-    <router-link class="my-0 mr-md-auto font-weight-normal" to="/">superjs</router-link>
+    <router-link class="mb-2 mr-md-auto font-weight-normal" to="/">super.js</router-link>
     <User></User>
   </div>
   <div class="mb-2">

@@ -3,12 +3,12 @@
     <template slot="button-content">
       <a>Tools</a>
     </template>
-    <b-dropdown-item>First Action</b-dropdown-item>
-    <b-dropdown-item>Second Action</b-dropdown-item>
-    <b-dropdown-item>Third Action</b-dropdown-item>
+    <b-dropdown-item>Hello</b-dropdown-item>
+    <b-dropdown-item>World</b-dropdown-item>
+    <b-dropdown-item>Third</b-dropdown-item>
     <b-dropdown-divider></b-dropdown-divider>
-    <b-dropdown-item>Something else here...</b-dropdown-item>
-    <b-dropdown-item disabled>Disabled action</b-dropdown-item>
+    <b-dropdown-item>Something</b-dropdown-item>
+    <b-dropdown-item>Daction</b-dropdown-item>
   </b-dropdown>
 </template>
 
@@ -21,6 +21,15 @@
 <style scoped>
   a {
     font-size: 1rem;
+  }
+
+  div.dropdown-menu {
+    padding: 0;
+  }
+
+  div > a.dropdown-item {
+    width: 70%;
+    padding-left: 0.5rem;
   }
 </style>
 

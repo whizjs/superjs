@@ -1,4 +1,4 @@
-# superjs
+# super.js
 
 ## Welcome
 ```

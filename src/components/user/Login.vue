@@ -44,13 +44,11 @@
 <style scoped>
   .form-signin {
     width: 100%;
-    max-width: 330px;
+    max-width: 450px;
     padding: 15px;
     margin: auto;
   }
-  .form-signin .checkbox {
-    font-weight: 400;
-  }
+
   .form-signin .form-control {
     position: relative;
     box-sizing: border-box;

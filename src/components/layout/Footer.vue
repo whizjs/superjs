@@ -2,9 +2,15 @@
     <footer class="pt-4 my-md-5 pt-md-5 border-top">
         <div class="row">
           <div class="col-12 col-md">
-            <img class="mb-2" src="../../assets/logo.png" alt="" width="24" height="24">
-            <span class="align-middle">superjs</span> 
-            <small class="d-block mb-3 text-muted">&copy; 2018-2018</small>
+            <div class="d-flex">
+            <span>
+              <img src="../../assets/logo.png" alt="" width="24" height="24">
+            </span>
+            <span>
+              &nbsp;&nbsp;super.js
+            </span> 
+            </div>
+            <div class="d-block mb-3 text-muted">&copy; 2018-2018</div>
           </div>
           <div class="col-6 col-md">
             <h5>Features</h5>
@@ -38,9 +44,9 @@
 </template>
 
 <script>
-export default {
-  name: "Footer"
-};
+  export default {
+    name: "Footer"
+  };
 </script>
 
 <style>

@@ -8,7 +8,7 @@
 
       <input type="password" class="form-control login-password" placeholder="Password" v-model.trim="pw_text" required />
       
-      <button @click.stop.prevent="getLoginToken"  class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <button @click.stop.prevent="loginStarted"  class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     
       <p class="mt-5 mb-3 text-muted">&copy; superjs.org</p>
     </form>
@@ -18,7 +18,7 @@
 <script>
   import axios from "axios";
   import isEmail from "validator/lib/isEmail";
-  import { login } from "../../helpers/fuliapi";
+  import { mapActions } from "vuex";
 
   export default {
     name: "Login",
@@ -29,13 +29,27 @@
       };
     },
     methods: {
-      getLoginToken() {
+      ...mapActions("user", {
+        login: "login"
+      }),
+      loginStarted() {
         let loginText = this.login_text;
         let pwText = this.pw_text;
+        let credentials = {};
         if (isEmail(loginText)) {
+          credentials = {
+            email: loginText,
+            password: pwText
+          };
+        } else {
+          credentials = {
+            username: loginText,
+            password: pwText
+          };
         }
-
-        console.log(loginText, pwText);
+        this.login({
+          credentials: credentials
+        });
       }
     }
   };

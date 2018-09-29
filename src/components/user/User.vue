@@ -12,20 +12,20 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
-export default {
-  name: "User",
-  computed: {
-    ...mapGetters("user", {
-      isLoggedIn: "isLoggedIn"
-    })
-  }
-};
+  import { mapActions, mapGetters } from "vuex";
+  export default {
+    name: "User",
+    computed: {
+      ...mapGetters("user", {
+        isLoggedIn: "isLoggedIn"
+      })
+    }
+  };
 </script>
 
 <style scoped>
-.user-btn {
-  min-width: 96px;
-}
+  .user-btn {
+    min-width: 96px;
+  }
 </style>
 

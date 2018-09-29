@@ -16,9 +16,10 @@
 </template>
 
 <script>
-export default {
-  name: "Home"
-};
+  import { mapActions, mapGetters } from "vuex";
+  export default {
+    name: "Home"
+  };
 </script>
 
 <style>

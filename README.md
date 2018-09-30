@@ -4,6 +4,8 @@
 
 [![StyleCI](https://github.styleci.io/repos/149175712/shield?branch=master)](https://github.styleci.io/repos/149175712)
 
+[![Build Status](https://travis-ci.org/SuperPHP/superjs.svg?branch=master)](https://travis-ci.org/SuperPHP/superjs)
+
 ## Welcome
 ```
 issues and pull requests are welcome

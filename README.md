@@ -1,10 +1,11 @@
 # super.js
 
 ## Badges
+<center>
 
-[![StyleCI](https://github.styleci.io/repos/149175712/shield?branch=master)](https://github.styleci.io/repos/149175712)
+[![StyleCI](https://github.styleci.io/repos/149175712/shield?branch=master)](https://github.styleci.io/repos/149175712) [![Build Status](https://travis-ci.org/SuperPHP/superjs.svg?branch=master)](https://travis-ci.org/SuperPHP/superjs)
 
-[![Build Status](https://travis-ci.org/SuperPHP/superjs.svg?branch=master)](https://travis-ci.org/SuperPHP/superjs)
+</center>
 
 ## Welcome
 ```

@@ -16,7 +16,6 @@
 </template>
 
 <script>
-  import axios from "axios";
   import _ from "lodash";
   import Swal from "sweetalert2";
   import isEmail from "validator/lib/isEmail";

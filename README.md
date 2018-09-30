@@ -1,5 +1,9 @@
 # super.js
 
+## Badges
+
+[![StyleCI](https://github.styleci.io/repos/149175712/shield?branch=master)](https://github.styleci.io/repos/149175712)
+
 ## Welcome
 ```
 issues and pull requests are welcome

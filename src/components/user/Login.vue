@@ -8,7 +8,7 @@
 
       <input type="password" class="form-control login-password" placeholder="Password" v-model.trim="pw_text" required />
       
-      <button @click.stop.prevent="loginStarted"  class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <button @click.stop.prevent="loginWithLocal()"  class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
     
       <p class="mt-5 mb-3 text-muted">&copy; superjs.org</p>
     </form>
@@ -17,6 +17,8 @@
 
 <script>
   import axios from "axios";
+  import _ from "lodash";
+  import Swal from "sweetalert2";
   import isEmail from "validator/lib/isEmail";
   import { mapActions } from "vuex";
 
@@ -30,12 +32,20 @@
     },
     methods: {
       ...mapActions("user", {
-        login: "login"
+        login: "login",
+        loginWith: "loginWith"
       }),
-      loginStarted() {
+      loginWithLocal() {
         let loginText = this.login_text;
         let pwText = this.pw_text;
+
+        if (_.compact([loginText, pwText]).length != 2) {
+          Swal("Oops...", "All fields are required!", "error");
+          return;
+        }
+
         let credentials = {};
+
         if (isEmail(loginText)) {
           credentials = {
             email: loginText,
@@ -49,6 +59,11 @@
         }
         this.login({
           credentials: credentials
+        });
+      },
+      loginWithOauth(strategy) {
+        this.loginWith({
+          strategy: strategy
         });
       }
     }

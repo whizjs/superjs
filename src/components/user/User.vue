@@ -1,7 +1,7 @@
 <template>
 <div>
   <div v-if="isLoggedIn">
-    Hello
+    Hello {{ username }}
   </div>
 
   <div v-else>
@@ -17,8 +17,14 @@
     name: "User",
     computed: {
       ...mapGetters("user", {
-        isLoggedIn: "isLoggedIn"
-      })
+        isLoggedIn: "isLoggedIn",
+        token: "getToken"
+      }),
+      username: function() {
+        let jwtDecode = require("jwt-decode");
+        let payload = jwtDecode(this.token);
+        return payload.name;
+      }
     }
   };
 </script>

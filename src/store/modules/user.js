@@ -8,7 +8,8 @@ const state = {
 };
 
 const getters = {
-    isLoggedIn: state => !!state.token
+    isLoggedIn: state => !!state.token,
+    getToken: state => state.token
 };
 
 //Mutations Must Be Synchronous
@@ -29,9 +30,17 @@ const actions = {
             url: LOGIN_URL,
             data: LOGIN_DATA
         });
-        // console.log(resp.data.token);
+
         commit('setToken', resp.data.token);
         window.localStorage.setItem('superjs_auth_token', resp.data.token);
+        router.push('/');
+    },
+
+    async loginWith({ commit }, payload) {
+        let strategy = payload.strategy;
+        let token = await console.log(strategy);
+        commit('setToken', token);
+        window.localStorage.setItem('superjs_auth_token', token);
         router.push('/');
     },
 

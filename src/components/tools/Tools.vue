@@ -28,7 +28,7 @@
   }
 
   div > a.dropdown-item {
-    width: 70%;
+    width: 50%;
     padding-left: 0.5rem;
   }
 </style>

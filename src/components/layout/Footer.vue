@@ -4,7 +4,7 @@
           <div class="col-12 col-md">
             <div class="d-flex">
             <span>
-              <img src="../../assets/logo.png" alt="" width="24" height="24">
+              <img src="@/assets/logo.png" alt="" width="24" height="24">
             </span>
             <span>
               &nbsp;&nbsp;super.js

@@ -25,8 +25,8 @@
 </template>
 
 <script>
-  import User from "../user/User";
-  import Tools from "../tools/Tools";
+  import User from "@/components/user/User";
+  import Tools from "@/components/tools/Tools";
   export default {
     name: "Header",
     components: {

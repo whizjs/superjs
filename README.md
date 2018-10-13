@@ -2,17 +2,39 @@
 
 ## Badges
 
-<center>
+<div align="center">
 
 [![StyleCI](https://github.styleci.io/repos/149175712/shield?branch=master)](https://github.styleci.io/repos/149175712) 
 [![Build Status](https://travis-ci.org/SuperPHP/superjs.svg?branch=master)](https://travis-ci.org/SuperPHP/superjs)
 
-</center>
+</div>
 
-## Welcome
+## Welcome to super.js
 ```
-issues and pull requests are welcome
+Issues and Pull Requests are welcome
 ```
+
+## Tech Stack
+
+ - vue.js 2
+ - @vue/cli 3
+ - vuex
+ - vue-router
+ - libraries:
+    - axios
+    - lodash
+    - bootstrap-vue UI
+    - validator
+ - Cloud Services
+    - firebase (Google Cloud)
+    - mailgun
+    - StyleCI
+    - Travis CI
+    - Github Oauth
+    - Google Oauth
+ - API consumed:
+    - Youtube API
+    - Crypto Compare API
 
 ## Project setup
 ```

@@ -4,7 +4,7 @@
       <img class="mb-4" src="../../assets/logo.png" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">Welcome Back!</h1>
 
-      <input type="text" class="form-control login-login" placeholder="Username or Email" v-model.trim="login_text" required autofocus />
+      <input type="text" class="form-control login-login mb-1" placeholder="Username or Email" v-model.trim="login_text" required autofocus />
 
       <input type="password" class="form-control login-password" placeholder="Password" v-model.trim="pw_text" required />
       

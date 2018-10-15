@@ -5,8 +5,22 @@ sudo: enabled
 branches:
   only:
     - master
-
+before_install:
+  - npm install -g firebase-tools
 install:
   - yarn install
 script:
   - yarn build
+deploy:
+  provider: firebase
+  project: "whizjs-superjs"
+  token:
+    secure: "D/KFffiYY6JS0LTZ2S7zl1CwcKYfMV56yiPc/WtpQjGYEJckn55gM9+CS9rMH99K0cN4L0xz+n+ks7nqNc2kHgWZc6QBSHX5H6tEK9EVED7M2zbIyc3U1cbyyCtWoTYesE9ebCJqBrjyC7whQwKYC1XmpcxsUM3kV1aq/qiyLuKOBIassxzxqdfXhTRO6W4OhWefhc1KpYqepMqEZvZ2msz+EcPs090WiMQa/flyxFImId1a4B7R70bI8GIL8jprm3qJd1eoihkbUW3KLBQwJKZeUgHduluKWgT6X+HW3ZX94togcBrCeu5MDvPloAKg4hN7s0n0MyR9FitPanyRz5t6L30uyzQYRax++0WpTUT5zMtKci15GXLVS5FbzcSWvyGjCNM9SpAM+jasPORu99rSrkeg2CvsmKweTlXBOOWYlq6v0uqhUqWRygHecFdm3dAsygkw8JtLaQ8HIfzIQiKCaYE6AAmrlgMsYcmLOIjPQqYhZ3RJbWmV0iDCG2ipej62yfrEaFrjJtR53dK7ZjW8Xmurn7b5qbomXnwijXVGTW3oNnMQzbSMUTwJzONQmUx5Hayevof51yva22zRbltTnsYb6rNiwsfAl/G9nYVi0z2CWDLnWRDW+Zk9jJsaiv9xRjlJeqaH/neLj+xorTX3mTdeG4QToVQ9seNPrBs="
+  skip_cleanup: true
+
+notifications:
+  slack: 
+    rooms:
+      - whizjs:1Yj4kddwBKy8c4CRFLdZFrf3#superjs
+    on_success: always
+    on_failure: always

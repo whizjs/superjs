@@ -6,6 +6,7 @@
 
 [![StyleCI](https://github.styleci.io/repos/152890558/shield?branch=master)](https://github.styleci.io/repos/152890558)
 [![Build Status](https://travis-ci.org/whizjs/superjs.svg?branch=master)](https://travis-ci.org/whizjs/superjs)
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](LICENSE)  
 
 </div>
 

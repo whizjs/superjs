@@ -15,7 +15,7 @@
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.11",
     "qs": "^6.5.2",
-    "sweetalert2": "^7.28.4",
+    "sweetalert2": "^7.28.5",
     "validator": "^10.7.1",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",

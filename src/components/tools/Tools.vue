@@ -25,7 +25,6 @@
 
   div.dropdown-menu {
     padding: 0;
-    transform: translate3d(0px, 50px, 0px) !important;
   }
 
   div > a.dropdown-item {

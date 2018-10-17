@@ -29,6 +29,8 @@
 
 <script>
   import isEmail from "validator/lib/isEmail";
+  import swal from "sweetalert2";
+
   export default {
     name: "Signup",
     computed: {
@@ -88,6 +90,30 @@
 
         console.log(credentials);
       }
+    },
+    created() {
+      const swalWithBootstrapButtons = swal.mixin({
+        confirmButtonClass: "btn btn-success",
+        cancelButtonClass: "btn btn-danger",
+        buttonsStyling: true
+      });
+
+      swalWithBootstrapButtons({
+        title: "Are you over 18 years old?",
+        text: "Please advise.",
+        type: "question",
+        showCancelButton: true,
+        confirmButtonText: "Yes",
+        cancelButtonText: "No",
+        reverseButtons: true,
+        allowOutsideClick: false
+      }).then(result => {
+        if (result.value) {
+          return;
+        } else if (result.dismiss === swal.DismissReason.cancel) {
+          window.location.href = "https://google.com";
+        }
+      });
     }
   };
 </script>

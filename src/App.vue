@@ -41,12 +41,13 @@
           showCancelButton: true,
           confirmButtonText: "Yes",
           cancelButtonText: "No",
-          reverseButtons: true
+          reverseButtons: true,
+          allowOutsideClick: false
         }).then(result => {
           if (result.value) {
             return;
           } else if (result.dismiss === swal.DismissReason.cancel) {
-            window.location.href = "https://baidu.com";
+            window.location.href = "https://google.com";
           }
         });
       }

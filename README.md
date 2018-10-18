@@ -1,6 +1,6 @@
 # super.js
 
-## Badges
+## Badges 
 
 <div align="center">
 
@@ -10,12 +10,13 @@
 
 </div>
 
-## Welcome to super.js
+## Welcome to super.js 欢迎来到super.js
 ```
+欢迎提交issue和PR！
 Issues and Pull Requests are welcome
 ```
 
-## Tech Stack
+## Tech Stack 技术栈
 
  - vue.js 2
  - @vue/cli 3
@@ -37,22 +38,26 @@ Issues and Pull Requests are welcome
     - Youtube API
     - Crypto Compare API
 
-## Project setup
-```
-yarn install
-```
+## Get Started 快速上手
+ - 其实这个项目已经用了travis ci，下面的步骤都自动运行了。
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+ - ### Dependency Installation 安装依赖
+    ```
+    yarn install
+    ```
 
-### Lints and fixes files
-```
-yarn run lint
-```
+ - ### Local development 本地运行
+    ```
+    yarn run serve
+    ```
+
+ - ### Go production 生产环境构建
+    ```
+    yarn run build
+    ```
+
+ - ### Lints and fixes files 
+    ```
+    yarn run lint
+    ```

@@ -64,4 +64,6 @@ Issues and Pull Requests are welcome
 ## To-Do List 项目功能
 
  - [ ] signup/login 注册登录
- - [x] 搜索Youtube视频
+ - [x] 搜索YouTube视频
+ - [ ] 找工作信息汇聚
+ - [ ] 比特币等加密币行情

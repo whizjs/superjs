@@ -11,6 +11,9 @@ install:
   - yarn install
 script:
   - yarn build
+env:
+  global:
+   - secure: "uU+6AWm/geRqHauD4PEp8soCuIJRizO+hA29HuQGPPGsarwS/HQTU9HzE8GIkML3axoilbzY2B+Z+57dqZF4mfJs5tZwCId1KWUtPBY5J7+sWUwSBrwBkBjhJnzqEGbQsX8iMkoskIl86cphSqgLOt0Ef4ZP22epFA8OK70wLaIx/D+hWpYNoqfWa4h6+76OnK8Tndcxj3jE5l5cBaoimWrvnTgjL09tgr+NwSSqLWW/I+dWXT5xsFmiH1QtnOcVYU4iY/NdKvCSWqdKv6US6n3kcfG9lOuHkFNuXZLAf/aVFpfkYgfPcUVekcQHaGY4vvTW83b3JpyGHs4RbzdPsP5AuuMkcLBQHieTT+xOedZOUPxJOq+gU6CfafLLCUnFeuvu2f3VMnO1lnX5MwQxhHmXgGdK+1T5FNEdr1cyqv8rHrcbr1g/qDY/suwVaWXAGE6OS0A7HlS9lFEuXn7BGBOMonJ7it5drvze8MHH/zlldT+x/17CS5ptni9zXNm/TCbLpfb3IgS6tq7QP/TvmlRIM7PHOcYYIbYm8E8zWJqq/EiBvGFj9UBI6ISyArdi6ihXk9vM8pjjt1UD7Rh20nzj1RWWoP76f7F4RumIJZeVINgG0sjJMNdyS3zg908QNERk+GVbonVMzJ1fbaJ8md3TvEihPTdCM102Ej+9YiI="
 deploy:
   provider: firebase
   project: "whizjs-superjs"

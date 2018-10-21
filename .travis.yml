@@ -1,13 +1,15 @@
 language: node_js
 node_js:
   - "8"
-sudo: enabled
+os: linux
+dist: trusty
+sudo: required
 branches:
   only:
     - master
 before_install:
-  - rm /bin/sh
-  - ln -s /bin/bash /bin/sh
+  - sudo rm /bin/sh
+  - sudo ln -s /bin/bash /bin/sh
   - yarn global add firebase-tools
 install:
   - yarn install

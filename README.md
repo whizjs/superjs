@@ -29,9 +29,9 @@ Issues and Pull Requests are welcome
     - validator
  - Cloud Services
     - firebase (Google Cloud)
-    - mailgun
+    - SendGrid
     - StyleCI
-    - Travis CI
+    - Travis-CI
     - Github Oauth
     - Google Oauth
  - API consumed:

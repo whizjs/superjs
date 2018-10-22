@@ -20,6 +20,22 @@ const mutations = {
 };
 
 const actions = {
+    async signupWithLocal({ commit }, payload) {
+        const SIGNUP_URL = BASE_URL + '/auth/signup';
+        const SIGNUP_DATA = payload.signupData;
+
+        let resp = await axios({
+            method: 'post',
+            url: SIGNUP_URL,
+            data: SIGNUP_DATA
+        });
+
+        commit('setToken', resp.data.data.token);
+        window.localStorage.setItem('superjs_auth_token', resp.data.data.token);
+        router.push('/');
+
+
+    },
     async login({ commit }, payload) {
 
         const LOGIN_URL = BASE_URL + '/auth/login';
@@ -31,8 +47,8 @@ const actions = {
             data: LOGIN_DATA
         });
 
-        commit('setToken', resp.data.token);
-        window.localStorage.setItem('superjs_auth_token', resp.data.token);
+        commit('setToken', resp.data.data.token);
+        window.localStorage.setItem('superjs_auth_token', resp.data.data.token);
         router.push('/');
     },
 

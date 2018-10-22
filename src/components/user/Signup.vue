@@ -20,7 +20,7 @@
         </label>
       </div>
 
-      <button @click.stop.prevent="getSignupToken"  class="btn btn-lg btn-primary btn-block" type="submit" :disabled="!legalChecked">Sign Up</button>
+      <button @click.stop.prevent="signup"  class="btn btn-lg btn-primary btn-block" type="submit" :disabled="!legalChecked">Sign Up</button>
     
       <p class="mt-5 mb-3 text-muted">&copy; superjs.org</p>
     </form>
@@ -30,6 +30,7 @@
 <script>
   import isEmail from "validator/lib/isEmail";
   import swal from "sweetalert2";
+  import { mapActions } from "vuex";
 
   export default {
     name: "Signup",
@@ -79,8 +80,11 @@
       };
     },
     methods: {
-      getSignupToken() {
-        let credentials = {
+      ...mapActions("user", {
+        signupWithLocal: "signupWithLocal"
+      }),
+      signup() {
+        let signupData = {
           username: this.signupPayload.username,
           email: this.signupPayload.email,
           password: this.signupPayload.pw,
@@ -88,7 +92,9 @@
           legal: +this.signupPayload.legal
         };
 
-        console.log(credentials);
+        this.signupWithLocal({
+          signupData
+        });
       }
     },
     created() {

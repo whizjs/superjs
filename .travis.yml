@@ -6,7 +6,6 @@ branches:
   only:
     - master
 before_install:
-  - yarn global add @vue/cli
   - yarn global add firebase-tools
 install:
   - yarn install

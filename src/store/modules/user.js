@@ -1,7 +1,10 @@
 import axios from 'axios';
 import router from '@/router';
 
-const BASE_URL = 'http://127.0.0.1:8000/api';
+const BASE_URL_DEV = 'http://127.0.0.1:8000/api';
+const BASE_URL_PROD = 'HTPP://api.fuliapi.com/api';
+
+let BASE_URL = process.env.NODE_ENV == 'production' ? BASE_URL_PROD : BASE_URL_DEV;
 
 const state = {
     token: window.localStorage.getItem('superjs_auth_token')

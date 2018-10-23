@@ -5,22 +5,10 @@ sudo: enabled
 branches:
   only:
     - master
-before_install:
-  - yarn global add firebase-tools
 install:
   - yarn install
 script:
   - yarn build
-env:
-  global:
-   - NODE_ENV: "production"
-   - secure: "uU+6AWm/geRqHauD4PEp8soCuIJRizO+hA29HuQGPPGsarwS/HQTU9HzE8GIkML3axoilbzY2B+Z+57dqZF4mfJs5tZwCId1KWUtPBY5J7+sWUwSBrwBkBjhJnzqEGbQsX8iMkoskIl86cphSqgLOt0Ef4ZP22epFA8OK70wLaIx/D+hWpYNoqfWa4h6+76OnK8Tndcxj3jE5l5cBaoimWrvnTgjL09tgr+NwSSqLWW/I+dWXT5xsFmiH1QtnOcVYU4iY/NdKvCSWqdKv6US6n3kcfG9lOuHkFNuXZLAf/aVFpfkYgfPcUVekcQHaGY4vvTW83b3JpyGHs4RbzdPsP5AuuMkcLBQHieTT+xOedZOUPxJOq+gU6CfafLLCUnFeuvu2f3VMnO1lnX5MwQxhHmXgGdK+1T5FNEdr1cyqv8rHrcbr1g/qDY/suwVaWXAGE6OS0A7HlS9lFEuXn7BGBOMonJ7it5drvze8MHH/zlldT+x/17CS5ptni9zXNm/TCbLpfb3IgS6tq7QP/TvmlRIM7PHOcYYIbYm8E8zWJqq/EiBvGFj9UBI6ISyArdi6ihXk9vM8pjjt1UD7Rh20nzj1RWWoP76f7F4RumIJZeVINgG0sjJMNdyS3zg908QNERk+GVbonVMzJ1fbaJ8md3TvEihPTdCM102Ej+9YiI="
-deploy:
-  provider: firebase
-  project: "whizjs-superjs"
-  token:
-    secure: "D/KFffiYY6JS0LTZ2S7zl1CwcKYfMV56yiPc/WtpQjGYEJckn55gM9+CS9rMH99K0cN4L0xz+n+ks7nqNc2kHgWZc6QBSHX5H6tEK9EVED7M2zbIyc3U1cbyyCtWoTYesE9ebCJqBrjyC7whQwKYC1XmpcxsUM3kV1aq/qiyLuKOBIassxzxqdfXhTRO6W4OhWefhc1KpYqepMqEZvZ2msz+EcPs090WiMQa/flyxFImId1a4B7R70bI8GIL8jprm3qJd1eoihkbUW3KLBQwJKZeUgHduluKWgT6X+HW3ZX94togcBrCeu5MDvPloAKg4hN7s0n0MyR9FitPanyRz5t6L30uyzQYRax++0WpTUT5zMtKci15GXLVS5FbzcSWvyGjCNM9SpAM+jasPORu99rSrkeg2CvsmKweTlXBOOWYlq6v0uqhUqWRygHecFdm3dAsygkw8JtLaQ8HIfzIQiKCaYE6AAmrlgMsYcmLOIjPQqYhZ3RJbWmV0iDCG2ipej62yfrEaFrjJtR53dK7ZjW8Xmurn7b5qbomXnwijXVGTW3oNnMQzbSMUTwJzONQmUx5Hayevof51yva22zRbltTnsYb6rNiwsfAl/G9nYVi0z2CWDLnWRDW+Zk9jJsaiv9xRjlJeqaH/neLj+xorTX3mTdeG4QToVQ9seNPrBs="
-  skip_cleanup: true
 
 notifications:
   slack: 

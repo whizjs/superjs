@@ -5,9 +5,9 @@ branches:
   only:
     - master
 install:
-  - npm install
+  - yarn install
 script:
-  - npx npm run build
+  - yarn build
 
 notifications:
   slack: 

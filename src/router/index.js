@@ -64,6 +64,16 @@ const router = new Router({
             path: '/user/signup',
             name: 'Signup',
             component: Signup
+        },
+        {
+            path: '/meta/legal/pp',
+            name: 'MetaLegalPricyPolicy',
+            component: () => import('@/components/meta/legal/PP.vue')
+        },
+        {
+            path: '/meta/legal/tou',
+            name: 'MetaLegalTermsOfUse',
+            component: () => import('@/components/meta/legal/TOU.vue')
         }
     ]
 });

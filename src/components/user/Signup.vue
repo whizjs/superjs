@@ -1,30 +1,37 @@
 <template>
-<div class="text-center">
-    <form class="form-signup">
-      <img class="mb-4" src="../../assets/logo.png" alt="" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">Welcome to super.js !</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <form class="form-signup">
+        <img class="mb-3" src="../../assets/logo.png" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Welcome to super.js !</h1>
 
-      <b-form-input type="text" :state="usernameIsValid" class="form-control signup-top mb-1" placeholder="Username" v-model.trim="signupPayload.username" required autofocus />
+        <b-form-input type="text" :state="usernameIsValid" class="form-control signup-top mb-1" placeholder="Username" v-model.trim="signupPayload.username" required autofocus />
 
-      <b-form-input type="email" :state="emailIsValid" class="form-control signup-middle mb-1" placeholder="Email" v-model.trim="signupPayload.email" required />
+        <b-form-input type="email" :state="emailIsValid" class="form-control signup-middle mb-1" placeholder="Email" v-model.trim="signupPayload.email" required />
 
-      <b-form-input type="email" :state="email2IsMatched" class="form-control signup-middle mb-1" placeholder="Confirm Email" v-model.trim="email2" required />
+        <b-form-input type="email" :state="email2IsMatched" class="form-control signup-middle mb-1" placeholder="Confirm Email" v-model.trim="email2" required />
 
-      <b-form-input type="password" :state="pwIsValid" class="form-control signup-middle mb-1" placeholder="Password" v-model.trim="signupPayload.pw" required />
+        <b-form-input type="password" :state="pwIsValid" class="form-control signup-middle mb-1" placeholder="Password" v-model.trim="signupPayload.pw" required />
 
-      <b-form-input type="password" :state="pw2IsMatched" class="form-control signup-bottom mb-1" placeholder="Password" v-model.trim="signupPayload.pw2" required />
+        <b-form-input type="password" :state="pw2IsMatched" class="form-control signup-bottom mb-1" placeholder="Password" v-model.trim="signupPayload.pw2" required />
 
-      <div class="checkbox d-flex">
-        <label>
-          <input type="checkbox" v-model.trim="signupPayload.legal" class="ml-1" /> I agree with <a href='#' target=_blank>Terms of Use</a> and <a href='#' target=_blank>Privacy Policy</a>
-        </label>
-      </div>
+        <div class="checkbox d-flex">
+          <label>
+            <input type="checkbox" v-model.trim="signupPayload.legal" class="ml-1" /> I agree with <a href='#' target=_blank>Terms of Use</a> and <a href='#' target=_blank>Privacy Policy</a>
+          </label>
+        </div>
 
-      <button @click.stop.prevent="signup"  class="btn btn-lg btn-primary btn-block" type="submit" :disabled="!legalChecked">Sign Up</button>
-    
-      <p class="mt-5 mb-3 text-muted">&copy; superjs.org</p>
-    </form>
+        <button @click.stop.prevent="signup"  class="btn btn-lg btn-primary btn-block" type="submit" :disabled="!legalChecked">Sign Up</button>
+      
+      </form>
+      <p class="mt-2 mb-3 text-muted">&copy; superjs.org</p>
+    </div>
+    <div class="col-md-6 text-center" >
+      <img class="mb-4 auth0" src="../../assets/github.png" alt="" width="72" height="72">
+    </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -163,5 +170,10 @@
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+  }
+
+  .auth0 {
+    margin-top: 200px;
+    cursor: pointer;
   }
 </style>

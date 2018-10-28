@@ -1,18 +1,19 @@
 <template>
-  <div class="text-center">
-    <form class="form-signin">
-      <img class="mb-4" src="../../assets/logo.png" alt="" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">Welcome Back!</h1>
+<div class="text-center">
+  <form class="form-signin">
+    <img class="mb-3" src="../../assets/logo.png" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Welcome Back!</h1>
 
-      <input type="text" class="form-control login-login mb-1" placeholder="Username or Email" v-model.trim="login_text" required autofocus />
+    <input type="text" class="form-control login-login mb-1" placeholder="Username or Email" v-model.trim="login_text" required autofocus />
 
-      <input type="password" class="form-control login-password" placeholder="Password" v-model.trim="pw_text" required />
-      
-      <button @click.stop.prevent="loginWithLocal()"  class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    <input type="password" class="form-control login-password" placeholder="Password" v-model.trim="pw_text" required />
     
-      <p class="mt-5 mb-3 text-muted">&copy; superjs.org</p>
-    </form>
-  </div>
+    <button @click.stop.prevent="loginWithLocal()"  class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+  
+  </form>
+  <p class="mt-2 mb-3 text-muted">&copy; superjs.org</p>
+  <img class="mb-4" @click="loginAuth0()" src="../../assets/github.png" alt="auth0 github" width="72" height="72" id="auth0-github">
+</div>
 </template>
 
 <script>
@@ -32,7 +33,8 @@
     methods: {
       ...mapActions("user", {
         login: "login",
-        loginWith: "loginWith"
+        loginWith: "loginWith",
+        loginWithAuth0: "loginWithAuth0"
       }),
       loginWithLocal() {
         let loginText = this.login_text;
@@ -64,6 +66,9 @@
         this.loginWith({
           strategy: strategy
         });
+      },
+      loginAuth0() {
+        this.loginWithAuth0();
       }
     }
   };
@@ -96,5 +101,9 @@
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+  }
+
+  #auth0-github {
+    cursor: pointer;
   }
 </style>

@@ -1,7 +1,10 @@
 <template>
 <div>
   <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-1 bg-white border-bottom">
-    <router-link class="mb-2 mr-md-auto font-weight-normal" to="/">super.js</router-link>
+    <router-link class="mb-2 mr-md-auto font-weight-normal" to="/">
+      <span>
+        <img src="@/assets/logo.png" alt="" width="24" height="24">
+      </span> super.js</router-link>
     <User></User>
   </div>
   <div class="mb-2">

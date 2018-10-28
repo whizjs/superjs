@@ -13,6 +13,7 @@ import Vip from '@/components/Vip';
 
 import Login from '@/components/user/Login';
 import Signup from '@/components/user/Signup';
+import UserAuth0Callback from '@/components/user/Auth0Callback';
 
 Vue.use(Router);
 
@@ -53,6 +54,11 @@ const router = new Router({
             path: '/user/login',
             name: 'Login',
             component: Login
+        },
+        {
+            path: '/user/auth0/callback',
+            name: 'user-auth0-callback',
+            component: UserAuth0Callback
         },
         {
             path: '/user/signup',

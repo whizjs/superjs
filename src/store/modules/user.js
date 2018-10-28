@@ -1,5 +1,6 @@
 import axios from 'axios';
 import router from '@/router';
+import auth0 from '@/helpers/auth0';
 
 const BASE_URL_DEV = 'http://127.0.0.1:8000/api';
 const BASE_URL_PROD = 'HTPP://api.fuliapi.com/api';
@@ -23,6 +24,9 @@ const mutations = {
 };
 
 const actions = {
+    loginWithAuth0() {
+        auth0.login();
+    },
     async signupWithLocal({ commit }, payload) {
         const SIGNUP_URL = BASE_URL + '/auth/signup';
         const SIGNUP_DATA = payload.signupData;

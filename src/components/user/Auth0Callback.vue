@@ -15,7 +15,7 @@
           console.log(err);
           return;
         }
-        router.push("/");
+        router.push({ name: "Home" });
       });
     },
     props: {},

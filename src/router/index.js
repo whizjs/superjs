@@ -67,7 +67,7 @@ const router = new Router({
         },
         {
             path: '/meta/legal/pp',
-            name: 'MetaLegalPricyPolicy',
+            name: 'MetaLegalPrivacyPolicy',
             component: () => import('@/components/meta/legal/PP.vue')
         },
         {

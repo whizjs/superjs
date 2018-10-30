@@ -84,7 +84,7 @@ Superjs.org will store Google user data to our database. We will not share it to
     </div>
 </template>
 
-<style>
+<style scoped>
     p {
       color: blue;
     }

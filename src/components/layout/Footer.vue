@@ -35,8 +35,8 @@
             <ul class="list-unstyled text-small">
               <li><a class="text-muted" href="#">Team</a></li>
               <li><a class="text-muted" href="#">Locations</a></li>
-              <li><a class="text-muted" href="/meta/legal/pp">Privacy Policy</a></li>
-              <li><a class="text-muted" href="/meta/legal/tou">Terms Of Use</a></li>
+              <li><router-link class="text-muted" :to="{name: 'MetaLegalPrivacyPolicy'}">Privacy Policy</router-link></li>
+              <li><router-link class="text-muted" :to="{name: 'MetaLegalTermsOfUse'}">Terms Of Use</router-link></li>
             </ul>
           </div>
         </div>

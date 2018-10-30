@@ -35,8 +35,8 @@
             <ul class="list-unstyled text-small">
               <li><a class="text-muted" href="#">Team</a></li>
               <li><a class="text-muted" href="#">Locations</a></li>
-              <li><a class="text-muted" href="#">Privacy</a></li>
-              <li><a class="text-muted" href="#">Terms</a></li>
+              <li><a class="text-muted" href="/meta/legal/pp">Privacy Policy</a></li>
+              <li><a class="text-muted" href="/meta/legal/tou">Terms Of Use</a></li>
             </ul>
           </div>
         </div>

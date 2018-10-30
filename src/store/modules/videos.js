@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_KEY = "AIzaSyBIdels2r6lBo0SVDptMtBMA-YuePvfats";
+const API_KEY = "AIzaSyDHP_kDAUYedhrinol6evpd6I_vmgdcAmY";
 
 const state = {
     videos: []

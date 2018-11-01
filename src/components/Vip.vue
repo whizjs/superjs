@@ -1,15 +1,13 @@
 <template>
-
   <div>
-	Vip	
+	  Vip	
   </div>
-  
 </template>
 
 <script>
-export default {
-  name: "Vip"
-};
+  export default {
+    name: "Vip"
+  };
 </script>
 
 

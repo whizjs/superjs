@@ -8,9 +8,9 @@
   </div>
   <div class="mb-2">
     <nav class="nav d-flex justify-content-between">
-      <router-link class="p-2 text-dark" to="/">Home</router-link>
+      <router-link class="p-2 text-dark" :to="{name:'Home'}">Home</router-link>
       <router-link class="p-2 text-dark" :to="{name:'Videos'}">Videos</router-link>
-      <router-link class="p-2 text-dark" to="/pictures">Pictures</router-link>
+      <router-link class="p-2 text-dark" :to="{name:'Pictures'}">Pictures</router-link>
       <router-link class="p-2 text-dark" to="/novels">Novels</router-link>
       <router-link class="p-2 text-dark" to="/bbs">BBS</router-link>
       <router-link class="p-2 text-dark" to="/news">News</router-link>

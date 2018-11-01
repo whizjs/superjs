@@ -5,15 +5,20 @@ import Home from '@/components/Home';
 import Videos from '@/components/Videos';
 import Pictures from '@/components/Pictures';
 import Jobs from '@/components/jobs/Jobs';
-
-import Tools from '@/components/tools/Tools';
-
 import Vip from '@/components/Vip';
-
-
 import Login from '@/components/user/Login';
 import Signup from '@/components/user/Signup';
 import UserAuth0Callback from '@/components/user/Auth0Callback';
+
+// function requireAuth(to, from, next) {
+//     if (!isLoggedIn()) {
+//         next({
+//             path: { name: 'UserLogin' }
+//         });
+//     } else {
+//         next();
+//     }
+// }
 
 Vue.use(Router);
 
@@ -41,13 +46,9 @@ const router = new Router({
             component: Jobs
         },
         {
-            path: '/tools',
-            name: 'Tools',
-            component: Tools
-        },
-        {
             path: '/vip',
             name: 'Vip',
+            // beforeEnter: requireAuth,
             component: Vip
         },
         {

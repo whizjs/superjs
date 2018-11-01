@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-md-6 text-center">
       <form class="form-signup">
-        <img class="mb-3" src="../../assets/logo.png" alt="" width="72" height="72">
+        <img class="mb-3" src="@/assets/logo.png" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Welcome to super.js !</h1>
 
         <b-form-input type="text" :state="usernameIsValid" class="form-control signup-top mb-1" placeholder="Username" v-model.trim="signupPayload.username" required autofocus />

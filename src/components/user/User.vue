@@ -5,8 +5,8 @@
   </div>
 
   <div v-else>
-    <router-link class="btn btn-outline-primary btn-sm user-btn" to="/user/signup">Sign Up</router-link>
-    <router-link class="btn btn-outline-primary btn-sm ml-2 user-btn" to="/user/login">Login</router-link>
+    <router-link class="btn btn-outline-primary btn-sm user-btn" :to="{name:'UserSignup'}">Sign Up</router-link>
+    <router-link class="btn btn-outline-primary btn-sm ml-2 user-btn" :to="{name: 'UserLogin'}">Login</router-link>
   </div>
 </div>
 </template>

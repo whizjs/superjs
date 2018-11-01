@@ -52,7 +52,7 @@ const router = new Router({
         },
         {
             path: '/user/login',
-            name: 'Login',
+            name: 'UserLogin',
             component: Login
         },
         {
@@ -62,7 +62,7 @@ const router = new Router({
         },
         {
             path: '/user/signup',
-            name: 'Signup',
+            name: 'UserSignup',
             component: Signup
         },
         {

@@ -12,7 +12,8 @@
   
   </form>
   <p class="mt-2 mb-3 text-muted">&copy; superjs.org</p>
-  <img class="mb-4" @click="loginAuth0()" src="../../assets/github.png" alt="auth0 github" width="72" height="72" id="auth0-github">
+  <img class="mb-4 auth0" @click="loginAuth0()" src="@/assets/github.png" alt="auth0 github" width="72" height="72">
+  <img class="mb-4 ml-2 auth0" @click="loginAuth0()" src="@/assets/outlook.png" alt="" width="72" height="72">
 </div>
 </template>
 
@@ -62,11 +63,6 @@
           credentials: credentials
         });
       },
-      loginWithOauth(strategy) {
-        this.loginWith({
-          strategy: strategy
-        });
-      },
       loginAuth0() {
         this.loginWithAuth0();
       }
@@ -103,7 +99,7 @@
     border-top-right-radius: 0;
   }
 
-  #auth0-github {
+  .auth0 {
     cursor: pointer;
   }
 </style>

@@ -59,14 +59,6 @@ const actions = {
         router.push('/');
     },
 
-    async loginWith({ commit }, payload) {
-        let strategy = payload.strategy;
-        let token = await console.log(strategy);
-        commit('setToken', token);
-        window.localStorage.setItem('superjs_auth_token', token);
-        router.push('/');
-    },
-
     logout: ({ commit }) => {
         commit('setToken', null);
         window.localStorage.removeItem('imgur_token');

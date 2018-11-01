@@ -28,7 +28,8 @@
       <p class="mt-2 mb-3 text-muted">&copy; superjs.org</p>
     </div>
     <div class="col-md-6 text-center" >
-      <img class="mb-4 auth0" src="../../assets/github.png" alt="" width="72" height="72">
+      <img class="mb-4 auth0" src="@/assets/github.png" alt="" width="72" height="72">
+      <img class="mb-4 ml-2 auth0" src="@/assets/outlook.png" alt="" width="72" height="72">
     </div>
   </div>
 </div>

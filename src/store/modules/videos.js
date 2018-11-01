@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_KEY = process.env.YOUTUBE_SEARCH_API;
+const API_KEY = "AIzaSyDHP_kDAUYedhrinol6evpd6I_vmgdcAmY";
 
 const state = {
     videos: []

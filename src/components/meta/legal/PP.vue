@@ -77,10 +77,6 @@ erichui329@gmail.com<br><br>
 We reserve the right, at any time, to add to, change, update, or modify this Policy, simply by posting such change, update, or modification on the Site and without any other notice to you. SUPERJS will send registered Users an email notifying them of any changes to this Policy, or otherwise advise registered users via their registration profile. Any such change, update, or modification will be effective immediately upon posting on the Site, and upon notice to registered users. It is your responsibility to review this Policy from time to time to ensure that you continue to agree with all of its terms.
 <br><br>
 
-<p>7. GOOGLE DATA POLICY.</p> 
-Superjs.org will store Google user data to our database. We will not share it to any people, orgnizations or entities outside Jekyll Technologies LLC. The use of Google user data will be limited to the practices explicitly disclosed in this privacy policy. We will not use it for any other purposes.
-
-
     </div>
 </template>
 

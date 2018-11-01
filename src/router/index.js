@@ -10,16 +10,6 @@ import Login from '@/components/user/Login';
 import Signup from '@/components/user/Signup';
 import UserAuth0Callback from '@/components/user/Auth0Callback';
 
-// function requireAuth(to, from, next) {
-//     if (!isLoggedIn()) {
-//         next({
-//             path: { name: 'UserLogin' }
-//         });
-//     } else {
-//         next();
-//     }
-// }
-
 Vue.use(Router);
 
 const router = new Router({
@@ -48,7 +38,6 @@ const router = new Router({
         {
             path: '/vip',
             name: 'Vip',
-            // beforeEnter: requireAuth,
             component: Vip
         },
         {

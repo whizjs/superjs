@@ -5,20 +5,22 @@
 </template>
 
 <script>
-  import auth0 from "@/helpers/auth0";
+  import { handleAuth } from "@/helpers/auth0";
   import router from "@/router";
   export default {
     name: "UserAuth0Callback",
-    beforeMount() {
-      auth0.handleAuth(err => {
-        if (err) {
-          // console.log(err);
-          return;
-        }
+    created() {
+      handleAuth(() => {
+        // if (err) {
+        //   console.log(err);
+        //   return;
+        // }
+        console.log("执行了");
         router.push({ name: "Home" });
       });
-    },
-    props: {},
-    methods: {}
+    }
   };
 </script>
+
+<style>
+</style>

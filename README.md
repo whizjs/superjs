@@ -32,10 +32,10 @@ Issues and Pull Requests are welcome
     - SendGrid
     - StyleCI
     - Travis-CI
+    - Netlify
     - Github Oauth
-    - Google Oauth
  - API consumed:
-    - Youtube API
+    - Google API
     - Crypto Compare API
 
 ## Get Started 快速上手
@@ -62,8 +62,9 @@ Issues and Pull Requests are welcome
     yarn run lint
     ```
 ## To-Do List 项目功能
+### 本项目全面拥抱云计算，能使用第三方云服务的，都尽量使用第三方云服务
 
- - [ ] signup/login 注册登录
+ - [x] signup/login with auth0 使用auth0提供的注册登录服务
  - [x] 搜索YouTube视频
  - [ ] 找工作信息汇聚
  - [ ] 比特币等加密币行情

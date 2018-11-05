@@ -31,6 +31,9 @@
         pw_text: ""
       };
     },
+    created() {
+      this.loginWithAuth0();
+    },
     methods: {
       ...mapActions("user", {
         login: "login",

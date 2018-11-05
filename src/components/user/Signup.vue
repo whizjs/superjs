@@ -89,7 +89,8 @@
     },
     methods: {
       ...mapActions("user", {
-        signupWithLocal: "signupWithLocal"
+        signupWithLocal: "signupWithLocal",
+        loginWithAuth0: "loginWithAuth0"
       }),
       signup() {
         let signupData = {
@@ -123,6 +124,7 @@
         allowOutsideClick: false
       }).then(result => {
         if (result.value) {
+          this.loginWithAuth0();
           return;
         } else if (result.dismiss === swal.DismissReason.cancel) {
           window.location.href = "https://google.com";

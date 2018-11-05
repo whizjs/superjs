@@ -13,7 +13,7 @@ import UserAuth0Callback from '@/components/user/Auth0Callback';
 Vue.use(Router);
 
 const router = new Router({
-    // mode: 'history',
+    mode: 'history',
     routes: [
         {
             path: '/',
@@ -56,14 +56,24 @@ const router = new Router({
             component: Signup
         },
         {
-            path: '/meta/legal/pp',
-            name: 'MetaLegalPrivacyPolicy',
-            component: () => import('@/components/meta/legal/PP.vue')
+            path: '/meta/legal',
+            component: () => import('@/components/meta/legal/Legal.vue'),
+            children: [
+                {
+                    path: 'pp',
+                    name: 'MetaLegalPrivacyPolicy',
+                    component: () => import('@/components/meta/legal/PP.vue')
+                },
+                {
+                    path: 'tou',
+                    name: 'MetaLegalTermsOfUse',
+                    component: () => import('@/components/meta/legal/TOU.vue')
+                }
+            ]
         },
         {
-            path: '/meta/legal/tou',
-            name: 'MetaLegalTermsOfUse',
-            component: () => import('@/components/meta/legal/TOU.vue')
+            path: '*',
+            component: () => import('@/components/layout/NotFound.vue')
         }
     ]
 });

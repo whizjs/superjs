@@ -10,12 +10,12 @@
   export default {
     name: "UserAuth0Callback",
     created() {
-      handleAuth(() => {
-        // if (err) {
-        //   console.log(err);
-        //   return;
-        // }
-        console.log("执行了");
+      handleAuth(err => {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        console.log("LALALA");
         router.push({ name: "Home" });
       });
     }

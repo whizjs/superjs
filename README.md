@@ -28,18 +28,17 @@ Issues and Pull Requests are welcome
     - bootstrap-vue UI
     - validator
  - Cloud Services
-    - firebase (Google Cloud)
     - SendGrid
     - StyleCI
     - Travis-CI
     - Netlify
-    - Github Oauth
- - API consumed:
+    - Auth0
+ - APIs consumed:
     - Google API
     - Crypto Compare API
 
 ## Get Started 快速上手
- - 其实这个项目已经用了travis ci，下面的步骤都自动运行了。
+ - 其实这个项目已经用了`netlify`，下面的步骤都自动运行和部署了。
 
 
  - ### Dependency Installation 安装依赖

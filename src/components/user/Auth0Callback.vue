@@ -17,6 +17,7 @@
         if (err) {
           return;
         }
+
         let urlHash = window.location.href.split("#")[1];
         let tokens = qs.parse(urlHash);
         this.finalizeAuth0Login({

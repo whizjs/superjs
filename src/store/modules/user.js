@@ -1,5 +1,3 @@
-import axios from 'axios';
-import router from '@/router';
 import { loginAuth0 } from '@/helpers/auth0';
 
 const state = {

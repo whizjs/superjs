@@ -1,4 +1,0 @@
-[[redirects]]
-  from = "https://superjs.netlify.com/*"
-  to = "https://superjs.org/:splat"
-  status = 301

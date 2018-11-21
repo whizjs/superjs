@@ -3,7 +3,7 @@ import auth0 from "auth0-js";
 const webAuth = new auth0.WebAuth({
     domain: 'whizjs.auth0.com',
     clientID: 'Yov7tjP4Mw9Aele2-Mkhmxl6ZMTQqHUb',
-    redirectUri: 'http://localhost:8080/user/auth0/callback',
+    redirectUri: 'https://superjs.org/user/auth0/callback',
     responseType: 'token id_token',
     scope: 'openid profile'
 });

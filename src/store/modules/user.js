@@ -2,24 +2,25 @@ import axios from 'axios';
 import router from '@/router';
 import { loginAuth0 } from '@/helpers/auth0';
 
-const BASE_URL_DEV = 'http://127.0.0.1:8000/api';
-const BASE_URL_PROD = 'HTPP://api.fuliapi.com/api';
-
-let BASE_URL = process.env.NODE_ENV == 'production' ? BASE_URL_PROD : BASE_URL_DEV;
-
 const state = {
-    token: window.localStorage.getItem('superjs_auth_token')
+    id_token: window.localStorage.getItem('superjs_auth0_id_token'),
+    access_token: window.localStorage.getItem('superjs_auth0_access_token'),
 };
 
 const getters = {
-    isLoggedIn: state => !!state.token,
-    getToken: state => state.token
+    isLoggedIn: state => !!state.id_token,
+    hasAccess: state => !!state.access_token,
+    getIdToken: state => state.id_token,
+    getAccessToken: state => state.access_token
 };
 
 //Mutations Must Be Synchronous
 const mutations = {
-    setToken: (state, token) => {
-        state.token = token;
+    setIdToken: (state, token) => {
+        state.id_token = token;
+    },
+    setAccessToken: (state, token) => {
+        state.access_token = token;
     }
 };
 
@@ -27,41 +28,22 @@ const actions = {
     loginWithAuth0() {
         loginAuth0();
     },
-    async signupWithLocal({ commit }, payload) {
-        const SIGNUP_URL = BASE_URL + '/auth/signup';
-        const SIGNUP_DATA = payload.signupData;
 
-        let resp = await axios({
-            method: 'post',
-            url: SIGNUP_URL,
-            data: SIGNUP_DATA
-        });
+    finalizeAuth0Login: ({ commit }, payload) => {
 
-        commit('setToken', resp.data.data.token);
-        window.localStorage.setItem('superjs_auth_token', resp.data.data.token);
-        router.push('/');
+        commit('setIdToken', payload.my_id_token);
+        window.localStorage.setItem('superjs_auth0_id_token', payload.my_id_token);
 
+        commit('setAccessToken', payload.my_access_token);
+        window.localStorage.setItem('superjs_auth0_access_token', payload.my_access_token);
 
-    },
-    async login({ commit }, payload) {
-
-        const LOGIN_URL = BASE_URL + '/auth/login';
-        const LOGIN_DATA = payload.credentials;
-
-        let resp = await axios({
-            method: 'post',
-            url: LOGIN_URL,
-            data: LOGIN_DATA
-        });
-
-        commit('setToken', resp.data.data.token);
-        window.localStorage.setItem('superjs_auth_token', resp.data.data.token);
-        router.push('/');
     },
 
     logout: ({ commit }) => {
-        commit('setToken', null);
-        window.localStorage.removeItem('imgur_token');
+        commit('setIdToken', null);
+        commit('setAccessToken', null);
+        window.localStorage.removeItem('superjs_auth0_id_token');
+        window.localStorage.removeItem('superjs_auth0_access_token');
     }
 };
 

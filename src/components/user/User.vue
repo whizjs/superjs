@@ -18,11 +18,12 @@
     computed: {
       ...mapGetters("user", {
         isLoggedIn: "isLoggedIn",
-        token: "getToken"
+        hasAccess: "hasAccess",
+        my_id_token: "getIdToken"
       }),
       username: function() {
         let jwtDecode = require("jwt-decode");
-        let payload = jwtDecode(this.token);
+        let payload = jwtDecode(this.my_id_token);
         return payload.name;
       }
     }

@@ -5,16 +5,10 @@ import store from './store';
 import BootstrapVue from 'bootstrap-vue'
 import VueAnalytics from 'vue-analytics'
 
-const isProd = process.env.NODE_ENV === 'production';
-
 Vue.use(BootstrapVue);
 Vue.use(VueAnalytics, {
   id: 'UA-114773079-3',
-  router,
-  debug: {
-    enable: !isProd,
-    sendHitTask: isProd
-  }
+  router
 })
 
 import 'bootstrap/dist/css/bootstrap.css'

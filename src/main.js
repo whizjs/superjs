@@ -10,10 +10,14 @@ const isProd = process.env.NODE_ENV === 'production';
 Vue.use(BootstrapVue);
 Vue.use(VueAnalytics, {
   id: 'UA-114773079-3',
-  router
+  router,
+  debug: {
+    enable: !isProd,
+    sendHitTask: isProd
+  }
 })
 
-console.log(isProd);
+// console.log(isProd); // true
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'

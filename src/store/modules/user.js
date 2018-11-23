@@ -2,7 +2,7 @@ import { loginAuth0 } from '@/helpers/auth0';
 
 const state = {
     id_token: window.localStorage.getItem('superjs_auth0_id_token'),
-    access_token: window.localStorage.getItem('superjs_auth0_access_token'),
+    access_token: window.localStorage.getItem('superjs_auth0_access_token')
 };
 
 const getters = {

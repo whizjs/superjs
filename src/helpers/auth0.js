@@ -1,9 +1,12 @@
 import auth0 from "auth0-js";
 
+let isProd = process.env.NODE_ENV === 'production';
+let BASE_URL = isProd ? "https://superjs.org" : "http://localhost:8080";
+
 const webAuth = new auth0.WebAuth({
     domain: 'whizjs.auth0.com',
     clientID: 'Yov7tjP4Mw9Aele2-Mkhmxl6ZMTQqHUb',
-    redirectUri: 'https://superjs.org/user/auth0/callback',
+    redirectUri: BASE_URL + '/user/auth0/callback',
     responseType: 'token id_token',
     scope: 'openid profile'
 });
@@ -26,12 +29,7 @@ const handleAuth = (cb) => {
     });
 };
 
-const getProfile = () => {
-    return userProfile;
-};
-
 export {
     loginAuth0,
-    handleAuth,
-    getProfile
+    handleAuth
 }

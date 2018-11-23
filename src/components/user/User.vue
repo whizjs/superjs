@@ -24,7 +24,7 @@
       username: function() {
         let jwtDecode = require("jwt-decode");
         let payload = jwtDecode(this.my_id_token);
-        return payload.name;
+        return payload.nickname;
       }
     }
   };

@@ -6,6 +6,7 @@ import BootstrapVue from 'bootstrap-vue'
 import VueAnalytics from 'vue-analytics'
 
 const isProd = process.env.NODE_ENV === 'production';
+// console.log(isProd); // true in netlify
 
 Vue.use(BootstrapVue);
 Vue.use(VueAnalytics, {
@@ -16,8 +17,6 @@ Vue.use(VueAnalytics, {
     sendHitTask: isProd
   }
 })
-
-// console.log(isProd); // true
 
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'

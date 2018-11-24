@@ -17,7 +17,7 @@ const getters = {
         }
         return false;
     },
-    hasAccess: state => !!state.access_token,
+    hasAccess: state => !!state.access_token, // needs optimization
     getIdToken: state => state.id_token,
     getAccessToken: state => state.access_token,
     getUsername: state => state.username,

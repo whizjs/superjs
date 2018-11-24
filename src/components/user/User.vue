@@ -12,19 +12,39 @@
 </template>
 
 <script>
-  import { mapGetters } from "vuex";
+  import { mapGetters, mapActions } from "vuex";
+  import { webAuth } from "@/helpers/auth0";
+
   export default {
     name: "User",
     computed: {
       ...mapGetters("user", {
         isLoggedIn: "isLoggedIn",
         hasAccess: "hasAccess",
-        my_id_token: "getIdToken"
-      }),
-      username: function() {
-        let jwtDecode = require("jwt-decode");
-        let payload = jwtDecode(this.my_id_token);
-        return payload.nickname;
+        accessToken: "getAccessToken",
+        my_id_token: "getIdToken",
+        username: "getUsername"
+      })
+    },
+    methods: {
+      ...mapActions("user", {
+        updateUsername: "updateUsername",
+        updateEmailVerificationStatus: "updateEmailVerificationStatus"
+      })
+    },
+    updated() {
+      if (this.isLoggedIn && !this.username) {
+        webAuth.client.userInfo(this.accessToken, (err, user) => {
+          if (err) {
+            throw new Error("oops");
+          }
+          this.updateUsername({
+            nickname: user.nickname
+          });
+          this.updateEmailVerificationStatus({
+            email_verified: user.email_verified
+          });
+        });
       }
     }
   };

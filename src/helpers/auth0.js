@@ -8,7 +8,7 @@ const webAuth = new auth0.WebAuth({
     clientID: 'Yov7tjP4Mw9Aele2-Mkhmxl6ZMTQqHUb',
     redirectUri: BASE_URL + '/user/auth0/callback',
     responseType: 'token id_token',
-    scope: 'openid profile'
+    scope: 'openid profile email'
 });
 
 const loginAuth0 = () => {
@@ -29,7 +29,10 @@ const handleAuth = (cb) => {
     });
 };
 
+
+
 export {
     loginAuth0,
-    handleAuth
+    handleAuth,
+    webAuth
 }

@@ -1,5 +1,7 @@
 import { loginAuth0 } from '@/helpers/auth0';
 
+let jwtDecode = require("jwt-decode");
+
 const state = {
     id_token: window.localStorage.getItem('superjs_auth0_id_token'),
     access_token: window.localStorage.getItem('superjs_auth0_access_token'),
@@ -8,7 +10,12 @@ const state = {
 };
 
 const getters = {
-    isLoggedIn: state => !!state.id_token,
+    isLoggedIn: state => {
+        if (!!state.id_token) {
+            return jwtDecode(state.id_token).exp >= Date.now();
+        }
+        return false;
+    },
     hasAccess: state => !!state.access_token,
     getIdToken: state => state.id_token,
     getAccessToken: state => state.access_token,

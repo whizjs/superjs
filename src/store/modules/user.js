@@ -12,7 +12,8 @@ const state = {
 const getters = {
     isLoggedIn: state => {
         if (!!state.id_token) {
-            return jwtDecode(state.id_token).exp >= Date.now();
+            let decodedToken = jwtDecode(state.id_token);
+            return decodedToken.exp * 1000 >= Date.now();
         }
         return false;
     },

@@ -4,3 +4,22 @@
 
   # Directory with the lambda functions to deploy to AWS.
   functions = "lambda"
+
+
+[[redirects]]
+  from = "/.netlify/functions/*"
+  to = "/api/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://superjs.netlify.com/*"
+  to = "https://superjs.org/:splat"
+  status = 301
+  force = true
+  
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false

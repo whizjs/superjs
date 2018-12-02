@@ -1,0 +1,6 @@
+[build]
+  # Default build command.
+  command = "yarn build"
+
+  # Directory with the lambda functions to deploy to AWS.
+  functions = "lambda"

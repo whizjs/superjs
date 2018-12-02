@@ -32,6 +32,7 @@ Issues and Pull Requests are welcome
     - StyleCI
     - Travis-CI
     - Netlify
+    - AWS Lambda
     - Auth0
  - APIs consumed:
     - Google API
@@ -48,17 +49,18 @@ Issues and Pull Requests are welcome
 
  - ### Local development 本地运行
     ```
-    yarn run serve
+    yarn serve:app
+    yarn serve:lambda
     ```
 
  - ### Go production 生产环境构建
     ```
-    yarn run build
+    yarn build
     ```
 
  - ### Lints and fixes files 
     ```
-    yarn run lint
+    yarn lint
     ```
 ## To-Do List 项目功能
 ### 本项目全面拥抱云计算，能使用第三方云服务的，都尽量使用第三方云服务

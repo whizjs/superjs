@@ -7,7 +7,7 @@
 
 
 [[redirects]]
-  from = "/.netlify/functions/*"
+  from = "/lambda/*"
   to = "/api/:splat"
   status = 301
   force = true
@@ -17,7 +17,7 @@
   to = "https://superjs.org/:splat"
   status = 301
   force = true
-  
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

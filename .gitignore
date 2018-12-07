@@ -7,7 +7,6 @@ node_modules
 # local env files
 .env.local
 .env.*.local
-src/helpers/auth0.config.dev.js
 
 # Log files
 npm-debug.log*

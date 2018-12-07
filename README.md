@@ -31,9 +31,8 @@ Issues and Pull Requests are welcome
     - SendGrid
     - StyleCI
     - Travis-CI
-    - Netlify
-    - AWS Lambda
-    - Auth0
+    - Netlify Lambda Functions
+    - Netlify Identity
  - APIs consumed:
     - Google API
     - Crypto Compare API

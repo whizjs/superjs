@@ -2,14 +2,32 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-import BootstrapVue from 'bootstrap-vue'
+import Vuetify from 'vuetify';
+import VueAnalytics from 'vue-analytics';
 
-Vue.use(BootstrapVue);
+import 'vuetify/dist/vuetify.min.css'
+import '@fortawesome/fontawesome-free/css/all.css'
 
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+const isProd = process.env.NODE_ENV === 'production';
+// console.log(isProd); // true in netlify
 
 Vue.config.productionTip = false
+
+
+Vue.use(VueAnalytics, {
+  id: 'UA-114773079-3',
+  router,
+  debug: {
+    enable: !isProd,
+    sendHitTask: isProd
+  }
+})
+
+Vue.use(Vuetify, {
+  iconfont: 'fa',
+})
+
+
 
 new Vue({
   store,

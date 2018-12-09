@@ -209,7 +209,6 @@
     },
     methods: {
       ...mapActions("user", {
-        updateUser: "updateUser",
         updateUserprofile: "updateUserprofile"
       }),
       searchWhatever() {
@@ -222,9 +221,6 @@
         netlifyIdentity.open("login");
         netlifyIdentity.on("login", user => {
           netlifyIdentity.close();
-          this.updateUser({
-            currentUser: user
-          });
           this.updateUserprofile({
             currentUserprofile: {
               username: user.user_metadata.full_name,
@@ -237,10 +233,6 @@
         netlifyIdentity.open("signup");
         netlifyIdentity.on("signup", user => {
           netlifyIdentity.close();
-          //必须更新User才能更新isLoggedIn，至于机制，暂时有点不明白
-          this.updateUser({
-            currentUser: user
-          });
           this.updateUserprofile({
             currentUserprofile: {
               username: user.user_metadata.full_name,
@@ -250,12 +242,8 @@
         });
       },
       netlifySignout() {
-        // must updateUser first, because vuex store is in strict mode
-        this.updateUser({
-          currentUser: null
-        });
         this.updateUserprofile({
-          currentUserprofile: {}
+          currentUserprofile: null
         });
         netlifyIdentity.logout();
         this.$router.push({ name: "Home" });

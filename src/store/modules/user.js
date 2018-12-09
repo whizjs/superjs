@@ -1,19 +1,20 @@
 const state = {
-    user: window.localStorage.getItem('gotrue.user'),
     userprofile: window.localStorage.getItem('userprofile')
 };
 
 const getters = {
-    getUserStatus: state => !!state.user,
+    getUserStatus: state => !!state.userprofile,
     getUserprofile: state => JSON.parse(state.userprofile)
 };
 
 //Mutations Must Be Synchronous
 const mutations = {
-    setUser: (state, currentUser) => {
-        state.user = currentUser;
-    },
     setUserprofile: (state, currentUserprofile) => {
+        if (!currentUserprofile) {
+            state.userprofile = null;
+            window.localStorage.removeItem('userprofile');
+            return;
+        }
         let profile = JSON.stringify(currentUserprofile);
         state.userprofile = profile;
         window.localStorage.setItem('userprofile', profile);
@@ -21,9 +22,6 @@ const mutations = {
 };
 
 const actions = {
-    async updateUser({ commit }, payload) {
-        await commit('setUser', payload.currentUser);
-    },
     async updateUserprofile({ commit }, payload) {
         await commit('setUserprofile', payload.currentUserprofile);
     }

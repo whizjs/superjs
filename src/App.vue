@@ -68,11 +68,7 @@
       </v-list>
     </v-navigation-drawer>
     <v-toolbar color="blue darken-4" dark app fixed>
-      <v-btn fab light @click.stop="drawer = !drawer">
-        <v-avatar size="32px" tile>
-          <img src="@/assets/logo.png" alt="superjs">
-        </v-avatar>
-      </v-btn>
+      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title style="width: 240px" class="ml-0 pl-3">
         <span class="hidden-sm-and-down" @click="goToRoute('Home')" style="cursor:pointer;">superjs</span>
       </v-toolbar-title>

@@ -2,10 +2,10 @@
   <v-layout row wrap class="text-xs-center" :style="mystyle">
     <v-flex xs12>
       <v-card dark color="primary">
-        <v-card-text class="headline">API Docs</v-card-text>
+        <v-card-text class="headline">API Docs (API文档)</v-card-text>
         <v-card-text>Base Url: https://superjs.org/api</v-card-text>
         <v-card-text>
-          First Test:
+          First API:
           <code>GET /hello</code>
         </v-card-text>
       </v-card>

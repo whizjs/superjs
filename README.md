@@ -35,6 +35,7 @@ Issues and Pull Requests are welcome
     - Netlify Identity
  - APIs consumed:
     - Google API
+    - CNODE
     - Crypto Compare API
 
 ## Get Started 快速上手
@@ -61,10 +62,11 @@ Issues and Pull Requests are welcome
     ```
     yarn lint
     ```
-## To-Do List 项目功能
+## Features 项目功能
 ### 本项目全面拥抱云计算，能使用第三方云服务的，都尽量使用第三方云服务
 
- - [x] signup/login with auth0 使用auth0提供的注册登录服务
+ - [x] 注册登录服务使用`Netlify Identity`服务
  - [x] 搜索YouTube视频
+ - [x] API和API文档开启
  - [ ] 找工作信息汇聚
  - [ ] 比特币等加密币行情

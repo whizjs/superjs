@@ -1,7 +1,5 @@
 <template>
-  <div>
-	  Vip	
-  </div>
+  <div>Vip</div>
 </template>
 
 <script>

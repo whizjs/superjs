@@ -1,24 +1,31 @@
-let jwtDecode = require("jwt-decode");
-
 const state = {
-    user: window.localStorage.getItem('gotrue.user')
+    user: window.localStorage.getItem('gotrue.user'),
+    userprofile: window.localStorage.getItem('userprofile')
 };
 
 const getters = {
-    getUser: state => state.user,
-    getUserStatus: state => !!state.user
+    getUserStatus: state => !!state.user,
+    getUserprofile: state => JSON.parse(state.userprofile)
 };
 
 //Mutations Must Be Synchronous
 const mutations = {
     setUser: (state, currentUser) => {
-        state.User = currentUser;
+        state.user = currentUser;
+    },
+    setUserprofile: (state, currentUserprofile) => {
+        let profile = JSON.stringify(currentUserprofile);
+        state.userprofile = profile;
+        window.localStorage.setItem('userprofile', profile);
     }
 };
 
 const actions = {
-    updateUser: ({ commit }, payload) => {
-        commit('setUser', payload.currentUser);
+    async updateUser({ commit }, payload) {
+        await commit('setUser', payload.currentUser);
+    },
+    async updateUserprofile({ commit }, payload) {
+        await commit('setUserprofile', payload.currentUserprofile);
     }
 };
 

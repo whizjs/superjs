@@ -4,7 +4,7 @@
       <v-container class="py-1">
         <v-layout row wrap>
           <v-flex xs12 class="mb-2">
-            <v-btn block large dark color="blue">Hello {{ username }}</v-btn>
+            <v-btn block large dark color="blue text-capitalize">Hello {{ username }}</v-btn>
           </v-flex>
           <v-flex xs12>
             <v-textarea
@@ -143,7 +143,14 @@
     </v-content>
     <v-footer height="auto" color="primary lighten-1" app inset>
       <v-layout justify-center row wrap>
-        <v-btn v-for="link in links" :key="link" color="white" flat round>{{ link }}</v-btn>
+        <v-btn
+          v-for="link in links"
+          :key="link"
+          color="white"
+          flat
+          round
+          class="text-capitalize"
+        >{{ link }}</v-btn>
         <v-flex primary lighten-2 py-3 text-xs-center black--text xs12>
           &copy;2018 -- {{ new Date().getFullYear()}}
           <strong>Superjs</strong>
@@ -247,9 +254,3 @@
     }
   };
 </script>
-
-<style>
-  * {
-    text-transform: none !important;
-  }
-</style>

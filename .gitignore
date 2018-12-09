@@ -3,6 +3,7 @@ node_modules
 
 # production code
 /dist
+/lambda
 
 # local env files
 .env.local

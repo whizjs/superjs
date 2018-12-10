@@ -122,7 +122,6 @@
       >
         <v-btn slot="activator" color="purple" fab>
           <v-icon dark>fas fa-user-circle</v-icon>
-          <v-icon>fas fa-times</v-icon>
         </v-btn>
         <v-tooltip left>
           <v-btn fab dark color="green" @click="netlifySignin" slot="activator">

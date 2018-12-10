@@ -6,7 +6,6 @@ import ApiDocs from '@/components/ApiDocs';
 
 import Videos from '@/components/Videos';
 import Pictures from '@/components/Pictures';
-import Jobs from '@/components/jobs/Jobs';
 import Vip from '@/components/Vip';
 
 Vue.use(Router);
@@ -33,11 +32,6 @@ const router = new Router({
             path: '/pictures',
             name: 'Pictures',
             component: Pictures
-        },
-        {
-            path: '/jobs',
-            name: 'Jobs',
-            component: Jobs
         },
         {
             path: '/vip',

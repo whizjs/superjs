@@ -4,7 +4,7 @@
       <v-container class="py-1">
         <v-layout row wrap>
           <v-flex xs12 class="mb-2">
-            <v-btn block large dark color="blue text-capitalize">Hello {{ username }}</v-btn>
+            <v-btn block large dark color="blue">Hello{{ ", " + username }}</v-btn>
           </v-flex>
           <v-flex xs12>
             <v-textarea
@@ -29,43 +29,45 @@
         </v-layout>
       </v-container>
       <v-divider></v-divider>
-      <v-list>
-        <template v-for="item in items">
-          <v-list-group
-            v-if="item.children"
-            v-model="item.model"
-            :key="item.text"
-            :prepend-icon="item.icon"
-            :append-icon="item['icon-alt']"
-          >
-            <v-list-tile slot="activator">
+      <v-container justify-center class="py-0 px-0">
+        <v-list>
+          <template v-for="item in items">
+            <v-list-group
+              v-if="item.children"
+              :value="item.active"
+              :key="item.text"
+              :prepend-icon="item.icon"
+              :append-icon="item['icon-alt']"
+            >
+              <v-list-tile slot="activator">
+                <v-list-tile-content>
+                  <v-list-tile-title>{{ item.text }}</v-list-tile-title>
+                </v-list-tile-content>
+              </v-list-tile>
+              <v-list-tile
+                v-for="(child, i) in item.children"
+                :key="i"
+                @click="goToRoute(child.routeName)"
+              >
+                <v-list-tile-action v-if="child.icon">
+                  <v-icon>{{ child.icon }}</v-icon>
+                </v-list-tile-action>
+                <v-list-tile-content>
+                  <v-list-tile-title>{{ child.text }}</v-list-tile-title>
+                </v-list-tile-content>
+              </v-list-tile>
+            </v-list-group>
+            <v-list-tile v-else @click="goToRoute(item.routeName)" :key="item.text">
+              <v-list-tile-action>
+                <v-icon>{{ item.icon }}</v-icon>
+              </v-list-tile-action>
               <v-list-tile-content>
                 <v-list-tile-title>{{ item.text }}</v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
-            <v-list-tile
-              v-for="(child, i) in item.children"
-              :key="i"
-              @click="goToRoute(child.routeName)"
-            >
-              <v-list-tile-action v-if="child.icon">
-                <v-icon>{{ child.icon }}</v-icon>
-              </v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>{{ child.text }}</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-          </v-list-group>
-          <v-list-tile v-else @click="goToRoute(item.routeName)" :key="item.text">
-            <v-list-tile-action>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>{{ item.text }}</v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </template>
-      </v-list>
+          </template>
+        </v-list>
+      </v-container>
     </v-navigation-drawer>
     <v-toolbar color="blue darken-4" dark app fixed>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
@@ -143,17 +145,9 @@
     </v-content>
     <v-footer height="auto" color="primary lighten-1" app inset>
       <v-layout justify-center row wrap>
-        <v-btn
-          v-for="link in links"
-          :key="link"
-          color="white"
-          flat
-          round
-          class="text-capitalize"
-        >{{ link }}</v-btn>
         <v-flex primary lighten-2 py-3 text-xs-center black--text xs12>
           &copy;2018 -- {{ new Date().getFullYear()}}
-          <strong>Superjs</strong>
+          <strong>superjs</strong>
         </v-flex>
       </v-layout>
     </v-footer>
@@ -176,7 +170,7 @@
         userprofile: "getUserprofile"
       }),
       username() {
-        return this.userprofile ? this.userprofile.username : "";
+        return this.userprofile ? this.userprofile.username : "there!";
       },
       broadcast() {
         return { message: "欢迎光临！", type: "" };
@@ -188,26 +182,53 @@
         drawer: null,
         items: [
           { icon: "fas fa-home", text: "Homepage", routeName: "Home" },
-          { icon: "fas fa-bookmark", text: "API Docs", routeName: "ApiDocs" },
-          { icon: "fab fa-linkedin", text: "Jobs" },
-          { icon: "fas fa-star", text: "VIP", routeName: "Vip" },
-          { icon: "fas fa-cogs", text: "Settings" },
+          {
+            icon: "fas fa-file-signature",
+            text: "API Docs",
+            routeName: "ApiDocs"
+          },
+          { icon: "fab fa-old-republic", text: "VIP", routeName: "Vip" },
+          { icon: "fas fa-rss", text: "Subscribe" },
           { icon: "fas fa-download", text: "Download Files" },
           {
-            icon: "fas fa-expand",
-            "icon-alt": "fas fa-arrow-down",
-            text: "More",
-            model: false,
+            icon: "fas fa-user-cog",
+            "icon-alt": "fas fa-chevron-down",
+            text: "Account Settings",
+            active: false,
             children: [
-              { text: "Import" },
-              { text: "Export" },
-              { text: "Print" },
-              { text: "Undo changes" },
-              { text: "Other contacts" }
+              { icon: "fas fa-user-tie", text: "My Profile" },
+              { icon: "fas fa-lock", text: "Reset Password" }
             ]
+          },
+          {
+            icon: "fas fa-globe",
+            "icon-alt": "fas fa-chevron-down",
+            text: "Meta Information",
+            active: false,
+            children: [
+              { icon: "fas fa-child", text: "About Us" },
+              { icon: "fas fa-phone-volume", text: "Contact Us" },
+              {
+                icon: "fas fa-file-alt",
+                text: "Terms Of Use",
+                routeName: "MetaTermsOfUse"
+              },
+              {
+                icon: "fas fa-user-secret",
+                text: "Privacy Policy",
+                routeName: "MetaPrivacyPolicy"
+              },
+              { icon: "fas fa-question-circle", text: "FAQs" }
+            ]
+          },
+          {
+            icon: "fas fa-expand",
+            "icon-alt": "fas fa-chevron-down",
+            text: "More",
+            active: false,
+            children: [{ icon: "fas fa-clock", text: "Coming Soon" }]
           }
-        ],
-        links: ["Home", "About Us", "Team", "Services", "Blog", "Contact Us"]
+        ]
       };
     },
     methods: {
@@ -254,3 +275,9 @@
     }
   };
 </script>
+
+<style>
+  * {
+    text-transform: none !important;
+  }
+</style>

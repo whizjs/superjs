@@ -100,7 +100,13 @@
         </v-btn>
 
         <v-tooltip left>
-          <v-btn fab dark color="black" @click="netlifySignout" slot="activator">
+          <v-btn
+            fab
+            dark
+            color="black"
+            @click="triggerNetlifyIdentityAction('logout')"
+            slot="activator"
+          >
             <v-icon>fas fa-sign-out-alt</v-icon>
           </v-btn>
           <span>Sign Out</span>
@@ -124,13 +130,25 @@
           <v-icon dark>fas fa-user-circle</v-icon>
         </v-btn>
         <v-tooltip left>
-          <v-btn fab dark color="green" @click="netlifySignin" slot="activator">
+          <v-btn
+            fab
+            dark
+            color="green"
+            @click="triggerNetlifyIdentityAction('login')"
+            slot="activator"
+          >
             <v-icon>fas fa-sign-in-alt</v-icon>
           </v-btn>
           <span>Sign In</span>
         </v-tooltip>
         <v-tooltip left>
-          <v-btn fab dark color="red" @click="netlifySignup" slot="activator">
+          <v-btn
+            fab
+            dark
+            color="red"
+            @click="triggerNetlifyIdentityAction('signup')"
+            slot="activator"
+          >
             <v-icon>fas fa-user-plus</v-icon>
           </v-btn>
           <span>Sign Up</span>
@@ -240,36 +258,30 @@
       goToRoute(routeName) {
         this.$router.push({ name: routeName });
       },
-      netlifySignin() {
-        netlifyIdentity.open("login");
-        netlifyIdentity.on("login", user => {
-          netlifyIdentity.close();
-          this.updateUserprofile({
-            currentUserprofile: {
+      triggerNetlifyIdentityAction(action) {
+        if (action == "login" || action == "signup") {
+          netlifyIdentity.open(action);
+          netlifyIdentity.on(action, user => {
+            netlifyIdentity.close();
+            let currentUserprofile = {
               username: user.user_metadata.full_name,
-              email: user.email
-            }
+              email: user.email,
+              access_token: user.token.access_token,
+              expires_at: user.token.expires_at,
+              refresh_token: user.token.refresh_token,
+              token_type: user.token.token_type
+            };
+            this.updateUserprofile({
+              currentUserprofile: currentUserprofile
+            });
           });
-        });
-      },
-      netlifySignup() {
-        netlifyIdentity.open("signup");
-        netlifyIdentity.on("signup", user => {
-          netlifyIdentity.close();
+        } else if (action == "logout") {
           this.updateUserprofile({
-            currentUserprofile: {
-              username: user.user_metadata.full_name,
-              email: user.email
-            }
+            currentUserprofile: null
           });
-        });
-      },
-      netlifySignout() {
-        this.updateUserprofile({
-          currentUserprofile: null
-        });
-        netlifyIdentity.logout();
-        this.$router.push({ name: "Home" });
+          netlifyIdentity.logout();
+          this.$router.push({ name: "Home" });
+        }
       }
     }
   };

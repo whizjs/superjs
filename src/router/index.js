@@ -4,6 +4,8 @@ import Router from 'vue-router';
 import Home from '@/components/Home';
 import ApiDocs from '@/components/ApiDocs';
 
+import GoogleSignIn from '@/components/meta/GoogleSignIn';
+
 import Videos from '@/components/Videos';
 import Pictures from '@/components/Pictures';
 import Vip from '@/components/Vip';
@@ -51,6 +53,11 @@ const router = new Router({
                     path: 'terms-of-use',
                     name: 'MetaTermsOfUse',
                     component: () => import('@/components/meta/TermsOfUse.vue')
+                },
+                {
+                    path: 'google-sign-in',
+                    name: 'GoogleSignIn',
+                    component: GoogleSignIn
                 }
             ]
         },

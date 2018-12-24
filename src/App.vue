@@ -86,6 +86,13 @@
       <v-btn icon>
         <v-icon>fas fa-bell</v-icon>
       </v-btn>
+      <img
+        src="@/assets/google.png"
+        alt="Vuetify"
+        v-if="!isLoggedIn"
+        @click="signInWithGoogle"
+        style="cursor:pointer;"
+      >
       <v-speed-dial
         left
         direction="bottom"
@@ -257,6 +264,9 @@
       },
       goToRoute(routeName) {
         this.$router.push({ name: routeName });
+      },
+      signInWithGoogle() {
+        alert("To Do: Google");
       },
       triggerNetlifyIdentityAction(action) {
         if (action == "login" || action == "signup") {

@@ -23,6 +23,7 @@
     "validator": "^10.7.1",
     "vue": "^2.5.17",
     "vue-analytics": "^5.16.0",
+    "vue-google-auth": "^1.0.5",
     "vue-router": "^3.0.1",
     "vuetify": "^1.3.12",
     "vuex": "^3.0.1"

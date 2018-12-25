@@ -266,7 +266,9 @@
         this.$router.push({ name: routeName });
       },
       signInWithGoogle() {
-        alert("To Do: Google");
+        this.googleAuth().signIn(function(authorizationCode) {
+          console.log(authorizationCode);
+        });
       },
       triggerNetlifyIdentityAction(action) {
         if (action == "login" || action == "signup") {
@@ -274,6 +276,7 @@
           netlifyIdentity.on(action, user => {
             netlifyIdentity.close();
             let currentUserprofile = {
+              src: "netlify",
               username: user.user_metadata.full_name,
               email: user.email,
               access_token: user.token.access_token,

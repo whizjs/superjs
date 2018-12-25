@@ -15,7 +15,7 @@ const isProd = process.env.NODE_ENV === 'production';
 Vue.config.productionTip = false
 
 Vue.use(GoogleAuth, {
-  client_id: '820664319776-su7r3dsg9e83s5t59adi3oi3hh2rti1s.apps.googleusercontent.com'
+  client_id: "820664319776-kratepkqp0lnq1kgsk6ob34pc7u3meug.apps.googleusercontent.com"
 });
 Vue.googleAuth().load();
 

@@ -4,7 +4,9 @@ import Router from 'vue-router';
 import Home from '@/components/Home';
 import ApiDocs from '@/components/ApiDocs';
 
-import GoogleSignIn from '@/components/meta/GoogleSignIn';
+import Oauth from '@/components/oauth/Oauth';
+import GoogleOauth from '@/components/oauth/GoogleOauth';
+import GithubOauth from '@/components/oauth/GithubOauth';
 
 import Videos from '@/components/Videos';
 import Pictures from '@/components/Pictures';
@@ -53,11 +55,22 @@ const router = new Router({
                     path: 'terms-of-use',
                     name: 'MetaTermsOfUse',
                     component: () => import('@/components/meta/TermsOfUse.vue')
+                }
+            ]
+        },
+        {
+            path: "/oauth",
+            component: Oauth,
+            children: [
+                {
+                    path: 'google',
+                    name: 'GoogleOauth',
+                    component: GoogleOauth
                 },
                 {
-                    path: 'google-sign-in',
-                    name: 'GoogleSignIn',
-                    component: GoogleSignIn
+                    path: 'github',
+                    name: 'GithubOauth',
+                    component: GithubOauth
                 }
             ]
         },

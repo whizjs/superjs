@@ -5,6 +5,11 @@
   # Directory with the lambda functions to deploy to AWS.
   functions = "lambda"
 
+[[redirects]]
+  from = "/auth/google"
+  to = "/.netlify/functions/auth"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/api/*"

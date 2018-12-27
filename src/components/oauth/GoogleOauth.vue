@@ -1,10 +1,10 @@
 <template>
-  <div>Google Sign In</div>
+  <div>Google Oauth</div>
 </template>
 
 
 <script>
   export default {
-    name: "GoogleSignIn"
+    name: "GoogleOauth"
   };
 </script>

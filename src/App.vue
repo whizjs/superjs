@@ -90,7 +90,7 @@
         src="@/assets/google.png"
         alt="Vuetify"
         v-if="!isLoggedIn"
-        @click="signInWithGoogle"
+        @click="signInWith('google')"
         style="cursor:pointer;"
       >
       <v-speed-dial
@@ -181,6 +181,7 @@
 <script>
   import { mapGetters, mapActions } from "vuex";
   import netlifyIdentity from "netlify-identity-widget";
+
   netlifyIdentity.init({
     APIUrl: "https://superjs.org/.netlify/identity",
     logo: true
@@ -265,9 +266,10 @@
       goToRoute(routeName) {
         this.$router.push({ name: routeName });
       },
-      signInWithGoogle() {
-        this.googleAuth().signIn(function(authorizationCode) {
-          console.log(authorizationCode);
+      signInWith(oauthProvider) {
+        this.$auth.authenticate(oauthProvider).then(function(r) {
+          console.log(r);
+          // Execute application logic after successful social authentication
         });
       },
       triggerNetlifyIdentityAction(action) {

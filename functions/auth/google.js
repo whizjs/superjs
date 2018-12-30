@@ -1,6 +1,6 @@
 const Request = require('request');
 
-exports.handler = function (event, context, callback) {
+let google = function (event, context, callback) {
 
     if (event.httpMethod !== 'POST' || !event.body) {
         callback('error');
@@ -36,3 +36,6 @@ exports.handler = function (event, context, callback) {
 
 
 }
+
+
+module.exports = google;

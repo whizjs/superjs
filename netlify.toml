@@ -6,6 +6,12 @@
   functions = "lambda"
 
 [[redirects]]
+  from = "/auth/google"
+  to = "/.netlify/functions/auth"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200

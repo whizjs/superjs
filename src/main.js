@@ -17,12 +17,12 @@ import axios from 'axios';
 
 Vue.use(VueAxios, axios)
 Vue.use(VueAuthenticate, {
-  baseUrl: 'http://localhost:9000', // Your API domain
+  baseUrl: 'https://superjs.org/api', // Your API domain
 
   providers: {
     google: {
       clientId: '820664319776-kratepkqp0lnq1kgsk6ob34pc7u3meug.apps.googleusercontent.com',
-      redirectUri: 'http://localhost:8080/oauth/google' // Your client app URL
+      redirectUri: 'https://superjs.org/oauth/google' // Your client app URL
     },
     github: {
       clientId: "49436bf9dcfb609b511f",

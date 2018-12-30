@@ -20,18 +20,15 @@ let google = function (event, context, callback) {
             'content-type': 'application/x-www-form-urlencoded'
         }
     }, function (err, response, body) {
-        try {
-            if (!err && response.statusCode === 200) {
-                callback(null, {
-                    statusCode: 200,
-                    body: body
-                });
-            } else {
-                callback('error' + JSON.stringify(err));
-            }
-        } catch (e) {
-            callback('error' + JSON.stringify(e));
+        if (!err && response.statusCode === 200) {
+            callback(null, {
+                statusCode: 200,
+                body: body
+            });
+        } else {
+            callback('error' + JSON.stringify(err));
         }
+
     })
 
 

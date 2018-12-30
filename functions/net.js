@@ -1,13 +1,8 @@
 import lify from './net/lify';
 
 exports.handler = function (event, context, callback) {
-    callback(null, {
-        statusCode: 200,
-        body: event.path.split('/')[3]
-    });
-    /** 
-    let subPath = event.path.split('/');
-    console.log(subPath)
+    let pathArray = event.path.split('/');
+    let subPath = pathArray[3];
     switch (subPath) {
         case 'lify':
             lify(event, context, callback)
@@ -15,5 +10,4 @@ exports.handler = function (event, context, callback) {
         default:
             callback('404 Path Not Found!');
     }
-    */
 }

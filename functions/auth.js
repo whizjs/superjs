@@ -1,7 +1,7 @@
-let google = require('./auth/google');
+import google from './auth/google';
 
 exports.handler = function (event, context, callback) {
-    let subPath = event.path.split('/')[2];
+    let subPath = event.path.split('/')[3];
     switch (subPath) {
         case 'google':
             google(event, context, callback)

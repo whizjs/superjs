@@ -1,4 +1,4 @@
-let lify = require('./net/lify');
+import lify from './net/lify';
 
 exports.handler = function (event, context, callback) {
     let subPath = event.path.split('/')[2];

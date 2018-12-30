@@ -37,5 +37,4 @@ let google = function (event, context, callback) {
 
 }
 
-
-module.exports = google;
+export default google;

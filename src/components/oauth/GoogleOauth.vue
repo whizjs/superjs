@@ -4,7 +4,11 @@
 
 
 <script>
+  import axios from "axios";
   export default {
-    name: "GoogleOauth"
+    name: "GoogleOauth",
+    mounted() {
+      let code = this.$route.query.code;
+    }
   };
 </script>

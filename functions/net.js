@@ -3,7 +3,7 @@ import lify from './net/lify';
 exports.handler = function (event, context, callback) {
     callback(null, {
         statusCode: 200,
-        body: "Netlify: " + event.path
+        body: event.path.split('/')
     });
     /** 
     let subPath = event.path.split('/');

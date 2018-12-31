@@ -1,5 +1,10 @@
 var Request = require('request');
 exports.handler = function (event, context, callback) {
+
+    // if (event.httpMethod != 'POST') {
+    //     callback('error');
+    // }
+
     Request({
         method: 'post',
         url: 'https://accounts.google.com/o/oauth2/token',

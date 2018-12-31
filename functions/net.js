@@ -1,8 +1,7 @@
 import lify from './net/lify';
 
 exports.handler = function (event, context, callback) {
-    let pathArray = event.path.split('/');
-    let subPath = pathArray[4] || pathArray[3];
+    let subPath = event.path.split('/').pop(); // retrieve last element
     switch (subPath) {
         case 'lify':
             lify(event, context, callback)

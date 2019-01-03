@@ -22,11 +22,11 @@ Vue.use(VueAuthenticate, {
   providers: {
     google: {
       clientId: '820664319776-kratepkqp0lnq1kgsk6ob34pc7u3meug.apps.googleusercontent.com',
-      redirectUri: 'https://superjs.org/oauth/google' // Your client app URL
+      redirectUri: 'http://localhost:8080/oauth/google' // Your client app URL
     },
     github: {
       clientId: "49436bf9dcfb609b511f",
-      redirectUri: "http://localhost:8080/oauth/github"
+      redirectUri: "https://superjs.org/oauth/github"
     }
   }
 })

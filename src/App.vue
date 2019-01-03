@@ -4,7 +4,7 @@
       <v-container class="py-1">
         <v-layout row wrap>
           <v-flex xs12 class="mb-2">
-            <v-btn block large dark class="blue text-none">Hello{{ ", " + username }}</v-btn>
+            <v-btn block large dark class="blue">Hello{{ ", " + username }}</v-btn>
           </v-flex>
           <v-flex xs12>
             <v-textarea
@@ -298,3 +298,9 @@
     }
   };
 </script>
+
+<style>
+  * {
+    text-transform: none !important;
+  }
+</style>

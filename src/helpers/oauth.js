@@ -1,6 +1,6 @@
-const googleAppId = '1073861298966-tcc0mciibfhta1b27hhcv489pff5hn8i.apps.googleusercontent.com';
+const googleAppId = '820664319776-kratepkqp0lnq1kgsk6ob34pc7u3meug.apps.googleusercontent.com';
 const googleScope = 'profile%20email';
-const googleCallback = 'http://harlanluo.cf:8080/google-oauth-callback.html';
+const googleCallback = 'https://superjs.org/google-oauth-callback.html';
 
 export function getGoogleOauthRedirectLink() {
   return `https://accounts.google.com/o/oauth2/auth?scope=${googleScope}&redirect_uri=${googleCallback}&client_id=${googleAppId}&response_type=code`;

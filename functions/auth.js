@@ -1,8 +1,8 @@
 const { OAuth2Client } = require('google-auth-library');
 
-const googleAppId = '1073861298966-tcc0mciibfhta1b27hhcv489pff5hn8i.apps.googleusercontent.com';
-const googleAppKey = 'PGB-2cXgBHDtmnVKFR19B1xl';
-const googleCallback = 'http://harlanluo.cf:8080/google-oauth-callback.html';
+const googleAppId = '820664319776-kratepkqp0lnq1kgsk6ob34pc7u3meug.apps.googleusercontent.com';
+const googleAppKey = 'aBDbuxOOAFYJN3q5CdXpvj7_';
+const googleCallback = 'https://superjs.org/google-oauth-callback.html';
 
 
 exports.handler = function (event, context, callback) {
@@ -21,7 +21,7 @@ exports.handler = function (event, context, callback) {
               'Access-Control-Allow-Origin': '*',
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify(res.data)
+            body: JSON.stringify(res.data) + JSON.stringify(pathes)
           })
         })
 
@@ -30,7 +30,7 @@ exports.handler = function (event, context, callback) {
   } else {
     callback(null, {
       statusCode: 200,
-      body: 'empty2'
+      body: ''
     });
   }
 }

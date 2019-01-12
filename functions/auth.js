@@ -2,7 +2,7 @@ const { OAuth2Client } = require('google-auth-library');
 
 const googleAppId = '820664319776-kratepkqp0lnq1kgsk6ob34pc7u3meug.apps.googleusercontent.com';
 const googleAppKey = 'aBDbuxOOAFYJN3q5CdXpvj7_';
-const googleCallback = 'https://superjs.org/google-oauth-callback.html';
+const googleCallback = 'https://superjs.org/oauth/google';
 
 
 exports.handler = function (event, context, callback) {

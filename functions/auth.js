@@ -25,7 +25,7 @@ exports.handler = function (event, context, callback) {
               'Access-Control-Allow-Origin': '*',
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify(res.data) + JSON.stringify(pathes)
+            body: JSON.stringify(res.data)
           })
         })
 

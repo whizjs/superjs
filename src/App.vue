@@ -182,7 +182,7 @@
   import { mapGetters, mapActions } from "vuex";
   import netlifyIdentity from "netlify-identity-widget";
 
-  import { getGoogleOauthRedirectLink } from './helpers/oauth';
+  import { getGoogleOauthRedirectLink } from "./helpers/oauth";
 
   netlifyIdentity.init({
     APIUrl: "https://superjs.org/.netlify/identity",
@@ -270,22 +270,29 @@
         this.$router.push({ name: routeName });
       },
       onGoogleOauthSuccess({ user }) {
-        // console.log('oauth success', user);
-        const profile = Object.assign({}, this.userprofile, {
-          src: user.picture,
-          username: user.name,
-          email: user.email,
-        });
+        // console.log("oauth success", user);
+        const profile = Object.assign(
+          {},
+          {
+            src: "google",
+            username: user.name,
+            email: user.email
+          }
+        );
         this.updateUserprofile({
           currentUserprofile: profile
         });
 
-        document.removeEventListener('google-oauth', this.onGoogleOauthSuccess);
+        document.removeEventListener("google-oauth", this.onGoogleOauthSuccess);
       },
       signInWith(oauthProvider) {
-        if (oauthProvider === 'google') {
-          document.addEventListener('google-oauth', this.onGoogleOauthSuccess)
-          this.oauthWindow = window.open(getGoogleOauthRedirectLink(), 'GoogleOauth', 'width=600,height=400,menubar=no,toolbar=no,location=no');
+        if (oauthProvider === "google") {
+          document.addEventListener("google-oauth", this.onGoogleOauthSuccess);
+          this.oauthWindow = window.open(
+            getGoogleOauthRedirectLink(),
+            "GoogleOauth",
+            "width=600,height=400,menubar=no,toolbar=no,location=no"
+          );
         }
       },
       triggerNetlifyIdentityAction(action) {
@@ -316,7 +323,7 @@
       }
     },
     beforeDestroy() {
-      document.removeEventListener('google-oauth', this.onGoogleOauthSuccess);
+      document.removeEventListener("google-oauth", this.onGoogleOauthSuccess);
     }
   };
 </script>

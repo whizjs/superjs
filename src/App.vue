@@ -270,15 +270,12 @@
         this.$router.push({ name: routeName });
       },
       onGoogleOauthSuccess({ user }) {
-        console.log("oauth success", user);
-        const profile = Object.assign(
-          {},
-          {
-            src: "google",
-            username: user.name,
-            email: user.email
-          }
-        );
+        // console.log("oauth success", user);
+        const profile = Object.assign({}, this.userprofile, {
+          src: "google",
+          username: user.name,
+          email: user.email
+        });
         this.updateUserprofile({
           currentUserprofile: profile
         });

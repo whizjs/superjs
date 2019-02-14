@@ -24,7 +24,7 @@ exports.handler = function (event, context, callback) {
             headers: {
               'Access-Control-Allow-Origin': '*',
               'Content-Type': 'application/json',
-              "Cache-Control": "must-revalidate"
+              "Cache-Control": "public, max-age=0, must-revalidate"
             },
             body: JSON.stringify(res.data)
           })

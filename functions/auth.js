@@ -23,8 +23,7 @@ exports.handler = function (event, context, callback) {
             statusCode: 200,
             headers: {
               'Access-Control-Allow-Origin': '*',
-              'Content-Type': 'application/json',
-              "Cache-Control": "public, max-age=0, must-revalidate"
+              'Content-Type': 'application/json'
             },
             body: JSON.stringify(res.data)
           })

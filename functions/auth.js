@@ -27,9 +27,8 @@ exports.handler = function (event, context, callback) {
             },
             body: JSON.stringify(res.data)
           })
-        })
-
-      })
+        }).catch(err => console.log(err));
+      }).catch(err => console.log(err));
     }
   } else {
     callback(null, {

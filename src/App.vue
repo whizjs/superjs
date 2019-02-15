@@ -269,8 +269,7 @@
       goToRoute(routeName) {
         this.$router.push({ name: routeName });
       },
-      onGoogleOauthSuccess({ user,mydata }) {
-        console.log(mydata);
+      onGoogleOauthSuccess({ user, mydata }) {
         // console.log("oauth success", user);
         const profile = Object.assign({}, this.userprofile, {
           src: "google",

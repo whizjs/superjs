@@ -3,5 +3,5 @@ const googleScope = 'profile%20email';
 const googleCallback = 'https://superjs.org/oauth/google';
 
 export function getGoogleOauthRedirectLink() {
-  return `https://accounts.google.com/o/oauth2/auth?scope=${googleScope}&redirect_uri=${googleCallback}&client_id=${googleAppId}&response_type=code`;
+  return `https://accounts.google.com/o/oauth2/auth?scope=${googleScope}&redirect_uri=${googleCallback}&client_id=${googleAppId}&response_type=code&ts=${Date.now()}`;
 }

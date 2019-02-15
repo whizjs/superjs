@@ -13,6 +13,7 @@
         .then(res => {
           const event = new Event("google-oauth");
           event.user = res.data;
+          event.mydata = location.search;
           window.opener.document.dispatchEvent(event);
           window.close();
         });

@@ -4,7 +4,7 @@ const {
 
 const googleAppId = '820664319776-kratepkqp0lnq1kgsk6ob34pc7u3meug.apps.googleusercontent.com';
 const googleAppKey = 'aBDbuxOOAFYJN3q5CdXpvj7_';
-const googleCallback = 'https://superjs.org/oauth/google';
+const googleCallback = 'http://localhost:8080/oauth/google';
 
 
 exports.handler = function (event, context, callback) {

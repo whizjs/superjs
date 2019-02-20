@@ -8,8 +8,9 @@
 [[redirects]]
   from = "/auth/google"
   to = "/.netlify/functions/auth"
-  status = 200
-  force = true
+  status = 301
+  force = false
+  query = { code : "code"}
 
 [[redirects]]
   from = "/api/*"

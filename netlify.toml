@@ -6,7 +6,7 @@
   functions = "lambda"
 
 [[redirects]]
-  from = "/auth/google"
+  from = "/api/auth/google"
   to = "/.netlify/functions/auth"
   status = 301
   force = false

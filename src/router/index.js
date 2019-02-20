@@ -2,7 +2,6 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 import Home from '@/components/Home';
-import ApiDocs from '@/components/ApiDocs';
 
 import Oauth from '@/components/oauth/Oauth';
 import GoogleOauth from '@/components/oauth/GoogleOauth';
@@ -21,11 +20,6 @@ const router = new Router({
             path: '/',
             name: 'Home',
             component: Home
-        },
-        {
-            path: "/api-docs",
-            name: "ApiDocs",
-            component: ApiDocs
         },
         {
             path: '/videos',

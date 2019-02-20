@@ -10,7 +10,7 @@
   to = "/.netlify/functions/auth"
   status = 301
   force = false
-  query = { code : "code"}
+  query = { code = "code"}
 
 [[redirects]]
   from = "/api/*"

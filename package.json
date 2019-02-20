@@ -16,7 +16,6 @@
     "date-fns": "^1.29.0",
     "google-auth-library": "^2.0.2",
     "jwt-decode": "^2.2.0",
-    "lodash": "^4.17.11",
     "netlify-identity-widget": "^1.5.2",
     "netlify-lambda": "^1.0.3",
     "request": "^2.88.0",

@@ -18,25 +18,22 @@ Issues and Pull Requests are welcome
 
 ## Tech Stack 技术栈
 
- - vue.js 2
+ - Vue.js 2
  - @vue/cli 3
  - vuex
  - vue-router
  - libraries:
     - axios
-    - lodash
-    - bootstrap-vue UI
+    - Vuetify UI Framework
     - validator
  - Cloud Services
-    - SendGrid
     - StyleCI
+    - Mailgun
     - Travis-CI
+    - Netlify Deploys
     - Netlify Lambda Functions
-    - Netlify Identity
  - APIs consumed:
-    - Google API
-    - CNODE
-    - Crypto Compare API
+    - Google Oauth
 
 ## Get Started 快速上手
  - 其实这个项目已经用了`netlify`，下面的步骤都自动运行和部署了。
@@ -65,8 +62,6 @@ Issues and Pull Requests are welcome
 ## Features 项目功能
 ### 本项目全面拥抱云计算，能使用第三方云服务的，都尽量使用第三方云服务
 
- - [x] 注册登录服务使用`Netlify Identity`服务
- - [x] 搜索YouTube视频
- - [x] API和API文档开启
+ - [x] 注册登录服务使用`Google Oauth`和`Github`第三方服务
  - [ ] 找工作信息汇聚
  - [ ] 比特币等加密币行情
